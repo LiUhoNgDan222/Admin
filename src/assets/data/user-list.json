@@ -1,0 +1,50 @@
+[
+  {
+    "username": "test1",
+    "type": 0,
+    "relationsSup": "test1",
+    "source": 0,
+    "available": 482.990,
+    "rebate": "12.0%",
+    "status": 0,
+    "lastLogin": "07-12 14:58",
+    "registerIp": "137.59.149.18",
+    "remarks": ""
+  },
+  {
+    "username": "test1",
+    "type": 1,
+    "relationsSup": "test1",
+    "source": 1,
+    "available": 482.990,
+    "rebate": "12.0%",
+    "status": 0,
+    "lastLogin": "07-12 14:58",
+    "registerIp": "137.59.149.18",
+    "remarks": ""
+  },
+  {
+    "username": "test1",
+    "type": 0,
+    "relationsSup": "test1",
+    "source": 1,
+    "available": 482.990,
+    "rebate": "12.0%",
+    "status": 0,
+    "lastLogin": "07-12 14:58",
+    "registerIp": "137.59.149.18",
+    "remarks": ""
+  },
+  {
+    "username": "test1",
+    "type": 0,
+    "relationsSup": "test1",
+    "source": 0,
+    "available": 482.990,
+    "rebate": "12.0%",
+    "status": 0,
+    "lastLogin": "07-12 14:58",
+    "registerIp": "137.59.149.18",
+    "remarks": ""
+  }
+]

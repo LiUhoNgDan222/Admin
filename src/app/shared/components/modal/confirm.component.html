@@ -1,0 +1,19 @@
+<div>
+  <div class="modal-body">
+    <!--<div>-->
+      <!--<button aria-label="Close" class="close" type="button" (click)="close()">-->
+        <!--<span aria-hidden="true">×</span>-->
+      <!--</button>-->
+    <!--</div>-->
+    <div class="text-primary text-center">
+      <div class="question">
+        <span>?</span>
+      </div>
+    </div>
+    <div class="text-center model-txt" [innerHTML]="config.content"></div>
+  </div>
+  <div class="text-center">
+    <button type="button" class="btn btn-confirm btn-sty" [ngClass]="config.approveBtnCls" (click)="approve($event)">{{config.approveBtnTxt}}</button>
+    <button type="button" class="btn btn-cancel btn-sty" [ngClass]="config.declineBtnCls" (click)="decline()">{{config.declineBtnTxt}}</button>
+  </div>
+</div>

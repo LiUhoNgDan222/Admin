@@ -1,0 +1,12 @@
+.datepicker{
+  z-index: 1;
+  .btn {
+    padding: 6px 18px;
+  }
+}
+
+@media screen and (max-width:912px ) {
+  .btn-date-range {
+    margin-top: 10px;
+  }
+}

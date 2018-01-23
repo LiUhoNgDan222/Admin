@@ -1,0 +1,110 @@
+<div class="header">
+  <nav class="navbar navbar-bg">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" (click)="ToggleNavbar()"><span class="fa fa-bars"></span></a>
+      </div>
+      <ul class="nav navbar-nav fast">
+        <li class="active"><a href="#"><span class="fa fa-home"></span> Home</a></li>
+        <li class="dropdown fast-op">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+             aria-expanded="false">快捷操作 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li>
+              <ul class="fast-item">
+                <li><a [routerLink]="['/pipeline/generalBet']"><i class="fa fa-eercast"></i><span>普通投注</span></a></li>
+                <li><a [routerLink]="['/userManage/userList']"><i class="fa fa-users"></i><span>用户列表</span></a></li>
+                <li><a data-toggle="modal" data-target="#addRechargeModal"><i class="fa fa-tablet"></i><span>账户充值</span></a></li>
+              </ul>
+            </li>
+            <li>
+              <ul class="fast-item">
+                <li><a [routerLink]="['/stationLetter/sendMessage']"><i class="fa fa-envelope"></i><span>发布消息</span></a></li>
+                <li><a href="###" (click)="cacheClear()"><i class="fa fa-location-arrow"></i><span>清空缓存</span></a></li>
+                <!--<li><a href="###"><i class="fa fa-plus"></i><span>添加</span></a></li>-->
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <div class="user pull-right">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="###" class="dropdown-toggle user-info" data-toggle="dropdown">
+              <i class="fa fa-fw fa-user-circle-o"></i>
+              <span class="name">{{ username || '登录' }}</span>
+              <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li>
+                <a [routerLink]="['/account/logout']"><i class="fa fa-sign-out fa-fw"></i> 注销</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<!-- addRechargeModal -->
+<div class="modal fade" id="addRechargeModal" tabindex="-1" role="dialog" aria-labelledby="addLotteryModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+          aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="addLotteryModalLabel">用户充值</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label for="user" class="col-sm-3 control-label">选择充值:</label>
+            <div class="col-sm-9 radio">
+              <label class="radio-inline">
+                <input type="radio" name="user" id="user" checked value="username">
+                <span class="circle"></span><span class="check"></span> 用户名
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="user" id="userid" value="username">
+                <span class="circle"></span><span class="check"></span> UserID
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="username" class="col-sm-3 control-label">用户名或UID:</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="username">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="recharge" class="col-sm-3 control-label">充值金额:</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="recharge">
+              <span class="text-danger">负数为扣款！</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="mark" class="col-sm-3 control-label">充值备注:</label>
+            <div class="col-sm-9">
+              <select name="" id="mark" class="form-control">
+                <option value="" selected>管理员充值</option>
+                <option value="">活动赠送</option>
+                <option value="">支付宝补充</option>
+                <option value="">网银补充</option>
+              </select>
+            </div>
+          </div>
+          <p class="help-block col-sm-offset-2 col-sm-10">提示：第一栏填写用户名 或 用户ID均可充值</p>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary">保存</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

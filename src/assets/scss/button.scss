@@ -1,0 +1,83 @@
+// 重写btn样式
+// normal
+.btn {
+  padding: 7px 18px;
+  color: #ffffff;
+}
+.btn-warning {
+  background-color: $bg-warning;
+  border: 1px solid $bg-warning;
+  &:hover, &:focus, &:active {
+    &:hover,&:focus, &:active {
+      outline: none;
+      background-color: $bg-warning;
+      border-color: $bg-warning;
+      box-shadow: 0 14px 20px -12px rgba(248, 194, 0, 0.42), 0 4px 15px 0 rgba(0, 0, 0, 0.12), 0 8px 5px -5px rgba(248, 194, 0, 0.2);
+    }
+  }
+}
+.btn-default {
+  background-color: $bg-default;
+  border: 1px solid $bg-default;
+  &:hover, &:focus, &:active {
+    &:hover, &:focus, &:active {
+      outline: none;
+      background-color: $bg-default;
+      border-color: $bg-default;
+      color: #ffffff;
+      box-shadow: 0 14px 20px -12px rgba(157, 174, 196, .42), 0 4px 15px 0 rgba(0, 0, 0, 0.12), 0 8px 5px -5px rgba(157, 174, 196, .2);
+    }
+  }
+}
+.btn-primary {
+  background-color: $bg-primary;
+  border: 1px solid $bg-primary;
+  &:hover, &:focus, &:active {
+    &:hover, &:focus, &:active {
+      outline: none;
+      background-color: $bg-primary;
+      border-color: $bg-primary;
+      color: #ffffff;
+      box-shadow: 0 14px 20px -12px rgba(236,64,122,.42), 0 4px 15px 0 rgba(0, 0, 0, 0.12), 0 8px 5px -5px rgba(236,64,122,.2);
+    }
+  }
+}
+.btn-info {
+  background-color: $bg-info;
+  border: 1px solid $bg-info;
+  &:hover, &:focus, &:active {
+    &:hover, &:focus, &:active {
+      outline: none;
+      background-color: $bg-info;
+      border-color: $bg-info;
+      color: #ffffff;
+      box-shadow: 0 14px 20px -12px rgba(66,165,245,.42), 0 4px 15px 0 rgba(0, 0, 0, 0.12), 0 8px 5px -5px rgba(66,165,245,.2);
+    }
+  }
+}
+.btn-success {
+  background-color: $bg-success;
+  border: 1px solid $bg-success;
+  &:hover, &:focus, &:active {
+    &:hover, &:focus, &:active {
+      outline: none;
+      background-color: $bg-success;
+      border-color: $bg-success;
+      color: #ffffff;
+      box-shadow: 0 14px 20px -12px rgba(40,190,189,.42), 0 4px 15px 0 rgba(0, 0, 0, 0.12), 0 8px 5px -5px rgba(40,190,189,.2);
+    }
+  }
+}
+.btn-danger {
+  background-color: $bg-danger;
+  border: 1px solid $bg-danger;
+  &:hover, &:focus, &:active {
+    &:hover, &:focus, &:active {
+      outline: none;
+      background-color: $bg-danger;
+      border-color: $bg-danger;
+      color: #ffffff;
+      box-shadow: 0 14px 20px -12px rgba(239,83,80,.42), 0 4px 15px 0 rgba(0, 0, 0, 0.12), 0 8px 5px -5px rgba(239,83,80,.2);
+    }
+  }
+}

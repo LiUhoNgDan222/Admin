@@ -1,0 +1,60 @@
+<div class="login-wrap">
+  <div class="bg-wall">
+    <div class="login">
+      <h1 class="text-center">Admin-后台管理</h1>
+      <form #form="ngForm" (ngSubmit)="form.form.valid" novalidate>
+        <div class="form-group" [ngClass]="{ 'has-error': form.submitted && !username1.valid }">
+          <div class="input-group" [ngClass]="username1.errors?'text-danger':''">
+            <div class="input-group-addon"><span class="fa fa-user"></span></div>
+            <input type="text" class="form-control" placeholder="请输入账号" name="username1" required  #username1="ngModel" minlength="4" [(ngModel)]="username">
+            <div class="input-group-addon" *ngIf="username1.errors && (username1.dirty || username1.touched)"><span class="fa fa-times"></span></div>
+            <div class="input-group-addon" *ngIf="!username1.errors"><span class="fa fa-check"></span></div>
+          </div>
+          <div *ngIf="username1.errors && (username1.dirty || username1.touched)" class="login-alert">
+            <div [hidden]="!username1.errors.required">
+              账号必填
+            </div>
+            <div [hidden]="!username1.errors.minlength">
+              账号长度必须大于4
+            </div>
+          </div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': form.submitted && !password1.valid }">
+          <div class="input-group">
+            <div class="input-group-addon"><span class="fa fa-lock"></span></div>
+            <input type="password" class="form-control" placeholder="请输入密码" name="password1" required  id="password1" #password1="ngModel" minlength="6" [(ngModel)]="password">
+            <div class="input-group-addon" *ngIf="password1.errors && (password1.dirty || password1.touched)"><span class="fa fa-times"></span></div>
+            <div class="input-group-addon" *ngIf="!password1.errors"><span class="fa fa-check"></span></div>
+          </div>
+          <div *ngIf="password1.errors && (password1.dirty || password1.touched)" class="login-alert">
+            <div [hidden]="!password1.errors.required">
+              密码必填
+            </div>
+            <div [hidden]="!password1.errors.minlength">
+              密码长度必须大于6
+            </div>
+          </div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': form.submitted && !verification.valid }">
+          <div class="input-group">
+            <div class="input-group-addon"><span class="fa fa-location-arrow"></span></div>
+            <input type="password" class="form-control" placeholder="请输入验证码" name="verification" #verification="ngModel" minlength="4" required [(ngModel)]="validate">
+            <div class="input-group-addon" *ngIf="verification.errors && (verification.dirty || verification.touched)"><span class="fa fa-times"></span></div>
+            <div class="input-group-addon" *ngIf="!verification.errors"><span class="fa fa-check"></span></div>
+          </div>
+          <div *ngIf="verification.errors && (verification.dirty || verification.touched)" class="login-alert">
+            <div [hidden]="!verification.errors.required">
+              验证码必填
+            </div>
+            <div [hidden]="!verification.errors.minlength">
+              验证码长度必须大于4
+            </div>
+          </div>
+        </div>
+        <div class="form-group text-center">
+          <button class="btn-def" [ngClass]="!form.form.valid?'btn-disabled':'btn-active'" (click)="doLogin()">登 录</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

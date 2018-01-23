@@ -1,0 +1,30 @@
+//@import "base";
+
+// 修改label的样式
+.form-group {
+  margin-bottom: 27px;
+  .control-label {
+    line-height: 1.07142857;
+    font-weight: 600;
+    margin: 3px 0 0;
+    font-size: 13px;
+    color: $label-color;
+  }
+  .form-control {
+    border: 0;
+    background-image: linear-gradient($bg-info,$bg-info),linear-gradient(rgba(165,181,203,.5),rgba(165,181,203,.5));
+    background-size: 0 2px,100% 1px;
+    background-repeat: no-repeat;
+    background-position: center bottom,center calc(100% - 1px);
+    background-color: transparent;
+    transition: background 0s ease-out;
+    float: none;
+    box-shadow: none;
+    border-radius: 0;
+    &:focus {
+      background-image: linear-gradient($bg-info,$bg-info),linear-gradient(rgba(165,181,203,.5),rgba(165,181,203,.5));
+      background-size: 100% 2px,100% 1px;
+      transition-duration: .3s;
+    }
+  }
+}

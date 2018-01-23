@@ -1,0 +1,116 @@
+<div class="wrap">
+  <div class="page-header">
+    <h1>Dashboard</h1>
+  </div>
+  <div class="content">
+    <div class="container-fluid">
+      <!--盈亏统计-->
+      <div class="row">
+        <div class="col-lg-7">
+          <div class="card">
+            <div class="card-header">
+              <div class="header-bg">
+                <div class="card-title">
+                  <h2>盈亏统计</h2>
+                </div>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="date">
+                <p><i>{{month}}</i> 月 <i>{{year}}</i>年</p>
+              </div>
+              <div class="center">
+                <ul>
+                  <li><i>时间</i><i>投注金额</i><i>盈亏</i></li>
+                  <li *ngFor="let item of profit_loss_list">
+                    <span>{{item.month_name}}</span><span>{{item.bet_amount | number:'1.2-2'}}</span><span>{{item.win_amount | number:'1.2-2'}}</span>
+                  </li>
+                  <li *ngFor="let item of surplus_list">
+                    <span>{{item.name}}</span><span>{{item.name}}</span><span>{{item.name}}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="data">
+            <div class="data-content">
+              <div class="row">
+                <div class="col-xs-6">
+                  <div class="data-show">
+                    <div class="data-label">
+                      <span class="btn">今日</span>
+                    </div>
+                    <div class="text-center data-num"><i>{{today_betting_amount | number:'1.2-2'}}</i><span>总投注</span></div>
+                    <div class="text-center data-num"><i class="num1">{{today_profit_loss | number:'1.2-2'}}</i><span>盈亏</span></div>
+                  </div>
+                </div>
+                <div class="col-xs-6">
+                  <div class="data-show">
+                    <div class="data-label">
+                      <span class="btn">昨日</span>
+                    </div>
+                    <div class="text-center data-num"><i>{{yesterday_betting_amount | number:'1.2-2'}}</i><span>总投注</span></div>
+                    <div class="text-center data-num"><i class="num1">{{yesterday_profit_los | number:'1.2-2'}}</i><span>盈亏</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="user-wrap">
+            <div class="user-data">
+              <div class="user">
+                <div class="user-header">
+                  <h2>今日数据</h2>
+                  <a href="###" (click)="refresh(1)"><span class="fa fa-refresh"></span></a>
+                </div>
+                <div class="user-content">
+                  <div class="chart">
+                    <div #myEcharts1 class="nf-chart"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="user-data">
+              <div class="user">
+                <div class="user-header">
+                  <h2>用户统计</h2>
+                  <a href="###" (click)="refresh(2)"><span class="fa fa-refresh"></span></a>
+                </div>
+                <div class="user-content">
+                  <div class="chart">
+                    <div #myEcharts2 class="nf-chart"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--彩种投注金额统计（彩种名称：投注金额）-->
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="statistic">
+            <div class="sta-header">
+              <h2>金额统计</h2>
+              <span>（彩种名称：投注金额）</span>
+            </div>
+            <div class="sta-content">
+              <div class="row">
+                <div class="data">
+                  <div class="col-lg-3 col-md-4 col-xs-6 item" *ngFor="let item of lottery_bets_statistics_list">
+                    <span class="item-title">{{item?.game_name}}</span>
+                    <span class="item-content">￥<i class="count">{{item?.bets_money | number:'1.2-2'}}</i></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!--彩种投注金额统计（彩种名称：投注金额）-->
+    </div>
+  </div>
+</div>

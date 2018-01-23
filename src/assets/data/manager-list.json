@@ -1,0 +1,21 @@
+[{
+  "uid":"10000",
+  "username":"admin",
+  "loginIp":"0.0.0.0",
+  "status":"0",
+  "lastlogin":"2017-07-20 09:14:03"
+},
+  {
+    "uid":"10001",
+    "username":"xiaoju",
+    "loginIp":"0.0.0.0",
+    "status":"0",
+    "lastlogin":"2017-07-20 09:14:03"
+  },
+  {
+    "uid":"10002",
+    "username":"dandan",
+    "loginIp":"0.0.0.0",
+    "status":"0",
+    "lastlogin":"2017-07-20 09:14:03"
+  }]

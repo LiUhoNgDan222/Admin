@@ -1,0 +1,66 @@
+{
+  "announce": [
+    {
+      "id": "111",
+      "title": "超级大乐透5亿派奖活动公告1",
+      "content": "超级大乐透5亿派奖活动公告,超级大乐透5亿派奖活动公告,超级大乐透5亿派奖活动公告,超级大乐透5亿派奖活动公告,超级大乐透5亿派奖活动公告.",
+      "show": 0,
+      "date": "2017-8-3"
+    },
+    {
+      "id": "112",
+      "title": "超级大乐透5亿派奖活动公告2",
+      "content": "超级大乐透5亿派奖活动公告,超级大乐透5亿派奖活动公告,超级大乐透5亿派奖活动公告,超级大乐透5亿派奖活动公告,超级大乐透5亿派奖活动公告.",
+      "show": 1,
+      "date": "2017-7-3"
+    }
+  ],
+  "receive": [
+    {
+      "id":"101",
+      "bank": "支付宝",
+      "imgSrc": "../../../../assets/images/alipay.png",
+      "holder": "xiaoju",
+      "account": "15785478541",
+      "status": 0
+    }
+  ],
+  "lottery": [
+    {
+      "id":"101",
+      "category": "重庆时时彩",
+      "abbreviation": "重庆时时彩",
+      "stopInterval": "10",
+      "sort": "数字排序",
+      "status": 0
+    }
+  ],
+  "markSixManage": [
+    {
+      "id":"101",
+      "name": "01",
+      "odds": "47"
+    },
+    {
+      "id":"102",
+      "name": "02",
+      "odds": "48"
+    }
+  ],
+  "rankSetting": [
+    {
+      "id":"101",
+      "level": "1",
+      "levelName": "Lv1",
+      "integral": "0",
+      "frequency": "3"
+    },
+    {
+      "id":"102",
+      "level": "2",
+      "levelName": "Lv2",
+      "integral": "0",
+      "frequency": "4"
+    }
+  ]
+}

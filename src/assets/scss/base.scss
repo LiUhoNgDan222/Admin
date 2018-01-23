@@ -1,0 +1,91 @@
+/*  颜色变量 */
+$navbar-bg: #fff;
+$theme-color: #28bebd;
+$a-hover: #EEF5F9;
+$a-font: #688696;
+
+$path-font: #516073;
+$span-font: #536b78;
+$p-font: #607188;
+
+$bg-success: #28bebd;
+$bg-danger: #ef5350;
+$bg-warning: #FEC007;
+$bg-info: #42a5f5;
+$bg-default: #9daec4;
+$bg-primary: #ec407a;
+
+$label-color: #758396;
+$radio-boder-color: rgba(165,181,203,.53);
+
+/* 宏定义 */
+// a:hover样式
+@mixin a-hover {
+  background-color: $bg-primary;
+  color: #fff !important;
+  box-shadow: 0 14px 26px -12px rgba(236, 64, 122, .42), 0 4px 23px 0 rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(236, 64, 122, .2);
+}
+
+.wrap {
+  .page-header {
+    margin: -4px -15px 0 0;
+    padding-top: 20px;
+    padding-left: 20px;
+    background-color: $theme-color;
+    h1 {
+      color: #fff;
+      display: inline-block;
+      font-size: 26px;
+      font-weight: lighter;
+    }
+    .path-breadcrumb {
+      display: inline-block;
+      margin-top: -15px;
+      .breadcrumb {
+        background-color: rgba(255, 255, 255, 0);
+        padding: 8px 15px 0 15px;
+        & > li {
+          color: rgba(255,255,255,.7);
+          font-size: 13px;
+          &:hover {
+            color: #fff;
+          }
+          &:last-of-type {
+            color: #fff;
+          }
+          & + li:before {
+            content: '>';
+            color: rgba(255,255,255,.7);
+          }
+        }
+        a {
+          color: rgba(255,255,255,.7);
+          &:hover {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  .content {
+    padding: 15px 20px;
+    border: none;
+    min-height: 806px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+    -ms-box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+    -o-box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrap {
+    .page-header {
+      h1, .path-breadcrumb {
+        padding-left: 10px;
+        display: block;
+      }
+    }
+  }
+}

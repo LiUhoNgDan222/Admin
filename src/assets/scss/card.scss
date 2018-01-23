@@ -1,0 +1,29 @@
+.card {
+  border: none;
+  background: #fff;
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+  -moz-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+  -ms-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+  -o-box-shadow: 0 1px 1px rgba(0,0,0,.1);
+  box-shadow: 0 1px 1px rgba(0,0,0,.1);
+  margin-bottom: 30px;
+  position: relative;
+  padding-bottom: 20px;
+  .card-heading {
+    padding: 15px 20px;
+    position: relative;
+    .card-title {
+      line-height: 23px;
+      padding-top: 4px;
+    }
+    h2.card-title {
+      font-size: 1.25em;
+      margin: 0;
+      font-weight: 400;
+      color: #516073;
+    }
+  }
+  .card-body {
+    padding: 15px 20px;
+  }
+}

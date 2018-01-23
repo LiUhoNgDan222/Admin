@@ -1,0 +1,27 @@
+[{
+  "time":"07-20 11:43:32",
+  "manager":"test",
+  "opType":"0",
+  "loginIp":"125.83.166.154",
+  "opDes":"银行设置[删除ID:40]",
+  "equivalIp":"0",
+  "opObject":"--"
+},
+  {
+    "time":"07-20 11:43:32",
+    "manager":"test1",
+    "opType":"0",
+    "loginIp":"125.83.166.154",
+    "opDes":"银行设置[删除ID:40]",
+    "equivalIp":"0",
+    "opObject":"--"
+  },
+  {
+    "time":"07-20 11:43:32",
+    "manager":"test2",
+    "opType":"0",
+    "loginIp":"125.83.166.154",
+    "opDes":"银行设置[删除ID:40]",
+    "equivalIp":"0",
+    "opObject":"--"
+  }]

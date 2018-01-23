@@ -1,0 +1,9 @@
+<div class="input-group datepicker" daterangepicker [options]="{startDate:dateInput}"
+     (selected)="selectedDate($event)">
+  <span class="form-control uneditable-input" name="daterange">
+      {{ dateInput | date: 'yyyy-MM-dd' }}
+  </span>
+  <span class="input-group-btn">
+  <a type="button" class="btn btn-default"><i class="fa fa-calendar"></i></a>
+  </span>
+</div>

@@ -1,0 +1,52 @@
+/* You can add global styles to this file, and also import other style files */
+// 插件样式引用
+@import "../node_modules/font-awesome/css/font-awesome.css";
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+@import "../node_modules/@swimlane/ngx-datatable/release/index.css";
+@import "../node_modules/@swimlane/ngx-datatable/release/themes/material.css";
+@import "../node_modules/@swimlane/ngx-datatable/release/assets/icons.css";
+@import "../node_modules/ngx-toastr/toastr";
+@import "../node_modules/ng2-daterangepicker/daterangepicker.component.css";
+
+
+// 样式引用
+@import "./assets/scss/ladding";
+@import "./assets/scss/base";
+@import "./assets/scss/button";
+@import "./assets/scss/datatable";
+@import "./assets/scss/modal";
+@import "assets/scss/radioAndCheckbox";
+
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #eef5f9;
+  //font-family: Poppins,sans-serif;
+  //font-family: "Open Sans",sans-serif;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+// responsive(导航栏)
+
+@media screen and (max-width: 768px) {
+  .push-right {
+    .nav-wrapper {
+      display: block !important;
+      .header {
+        display: none !important;
+      }
+    }
+  }
+}
+
+
+

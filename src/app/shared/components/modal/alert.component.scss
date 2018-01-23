@@ -1,0 +1,99 @@
+.fade {
+  opacity: 1;
+}
+.modal{
+  background-color: rgba(59, 61, 62, 0.5);
+  height: 100%;
+  width: 100%;
+  position: relative;
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  box-sizing: border-box;
+  .modal-content{
+    border-radius: 5px;
+    padding: 20px;
+  }
+  .modal-dialog{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    margin-left: -250px;
+    margin-top: -100px;
+    .modal-body{
+      padding: 0;
+    }
+    .question{
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 0 auto;
+      border: 4px solid #87adbd;
+     span{
+       font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+       color: #87adbd;
+       border-color: #c9dae1;
+       font-size: 60px;
+       line-height: 80px;
+       text-align: center;
+     }
+    }
+    .text-danger{
+      .question{
+        border: 4px solid #f27474!important;
+        span{
+          color: #f27474!important;
+          border-color: #f27474!important;
+        }
+      }
+    }
+    .text-warning{
+      .question{
+        border: 4px solid #f8bb86!important;
+        span{
+          color: #f8bb86!important;
+          border-color: #f8bb86!important;
+        }
+      }
+    }
+    .txt{
+      margin-top: 20px;
+      .model-txt{
+        text-align: center;
+        text-transform: none;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        line-height: 60px;
+        display: block;
+        font-size: 1.15em;
+        margin: 0;
+        color: #607188;
+      }
+      .title{
+        font-size: 1.25em;
+        margin: 0;
+        font-weight: 400;
+        color: #414f61;
+      }
+    }
+    .btn-confirm{
+      background-color: #ec407a!important;
+      color: #FFF!important;
+      box-shadow: 0 2px 2px 0 rgba(236,64,122,.14),0 3px 1px -2px rgba(236,64,122,.2),0 1px 5px 0 rgba(236,64,122,.12)!important;
+    }
+    .btn-sty{
+      border: none;
+      border-radius: 3px;
+      position: relative;
+      padding: 12px 30px;
+      margin: 10px 1px;
+      font-size: 14px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0;
+      will-change: box-shadow,transform;
+      transition: box-shadow .2s cubic-bezier(.4,0,1,1),background-color .2s cubic-bezier(.4,0,.2,1);
+      outline: 0;
+    }
+  }
+}

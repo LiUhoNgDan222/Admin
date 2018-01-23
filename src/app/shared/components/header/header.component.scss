@@ -1,0 +1,137 @@
+@import "../../../../assets/scss/base";
+
+.header {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  border-radius: 0;
+  .navbar-header {
+    width: 226px;
+    .navbar-brand {
+      color: $a-font;
+      font-size: 24px;
+      line-height: 40px;
+    }
+  }
+  .navbar-nav {
+    & > li {
+      & > a {
+        padding-top: 0;
+        line-height: 64px;
+        padding-bottom: 0;
+        color: $a-font;
+        &:hover, &:active, &:focus {
+          background-color: $a-hover;
+        }
+      }
+    }
+    .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+      background-color: $a-hover;
+    }
+    .fast-op {
+      .dropdown-menu {
+        width: 320px;
+        padding: 20px;
+        & > li {
+          padding: 0;
+          margin: 0;
+          list-style: none;
+          .fast-item {
+            padding: 0;
+            margin: 0;
+            & > li {
+              color: $a-font;
+              display: inline-block;
+              a {
+                line-height: 24px;
+                text-transform: uppercase;
+                text-align: center;
+                transition: all .3s;
+                font-size: 16px;
+                display: block;
+                padding: 10px;
+                color: $a-font;
+                width: 90px;
+                text-decoration: none;
+                i {
+                  font-size: 24px;
+                  line-height: 1.8em;
+                }
+                span {
+                  display: block;
+                  clear: both;
+                  font-size: 12px;
+                  text-align: center;
+                }
+                &:hover {
+                  @include a-hover;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .navbar-bg {
+    background-color: #fff;
+    color: $a-font;
+    border-radius: 0;
+    height: 65px;
+    user-select: none;
+    position: fixed;
+    z-index: 85;
+    width: 100%;
+    top: 0;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 2px 1px -1px rgba(0, 0, 0, .12);
+  }
+
+  .user {
+    .user-info {
+      i:first-child {
+        color: $theme-color;
+        font-size: 34px;
+        vertical-align: middle;
+      }
+      .name {
+        padding-right: 5px;
+        color: $a-font;
+      }
+    }
+    .dropdown-menu {
+      background-color: #fff;
+      li {
+        padding: 5px 10px;
+        display: block;
+        a {
+          color: $a-font;
+          text-decoration: none;
+          padding: 10px 15px;
+          font-size: 14px;
+          width: 180px;
+          &:hover {
+            @include a-hover;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    margin-bottom: 0;
+  }
+  .fast {
+    display: none;
+  }
+  .user {
+    margin-top: -58px;
+    .dropdown-menu {
+      position: absolute;
+      border: 1px solid rgba(0, 0, 0, .15);
+      border-radius: 4px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    }
+  }
+}

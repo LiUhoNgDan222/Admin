@@ -1,0 +1,32 @@
+<div class="modal-body">
+  <div class="text-center">
+    <!--<div  class="text-info"  [hidden]="!isInfo(config.type)">-->
+      <!--<div class="text-center">-->
+        <!--<div class="question">-->
+          <!--<span>?</span>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+    <div class="text-danger" [hidden]="!isError(config.type)">
+      <div class="text-center">
+        <div class="question">
+          <span>&times;</span>
+        </div>
+      </div>
+    </div>
+    <div class="text-warning" [hidden]="!isWarning(config.type)">
+      <div class="text-center">
+        <div class="question">
+          <span>!</span>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="txt">
+  <h5  class="text-center title" [hidden]='!config.title'>{{config.title}}</h5>
+  <div class="text-center model-txt" [innerHTML]="config.content"></div>
+</div>
+</div>
+<div class="text-center">
+  <button type="button" class="btn btn-confirm btn-sty" [ngClass]="config.approveBtnCls" (click)="approve()">{{config.approveBtnTxt}}</button>
+</div>
