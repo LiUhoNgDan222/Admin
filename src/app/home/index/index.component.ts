@@ -87,7 +87,7 @@ export class IndexComponent implements OnInit {
         itemStyle: {
           normal: {
             color: function (params) {
-              const colorList = ['#FE8463', '#9BCA63', '#FAD860', '#F3A43B', '#60C0DD'];
+              const colorList = ['#FE8463', '#9BCA63', '#FAD860', '#f76262', '#60C0DD', '#F3A43B', '#7fcaa1'];
               return colorList[params.dataIndex];
             },
             label: {
@@ -136,7 +136,7 @@ export class IndexComponent implements OnInit {
     ],
     yAxis: [
       {
-        name: '(人数)',
+        name: '(元)',
         type: 'value',
         axisLine: {
           show: false
@@ -156,7 +156,7 @@ export class IndexComponent implements OnInit {
         name: '人',
         type: 'bar',
         barWidth: '60%',
-        data: [13, 24, 5, 4, 22, 9],
+        data: [13, 4, 10, 8, 18, 9],
         itemStyle: {
           normal: {
             color: function (params) {
