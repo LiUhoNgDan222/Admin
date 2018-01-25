@@ -24,14 +24,14 @@ export const menus = [
     list: [
       {
         id: 1,
-        item: 'table',
+        item: 'Table',
         routerLink: '/components/table',
         icon: 'fa-table',
         isActive: false
       },
       {
         id: 2,
-        item: 'button',
+        item: 'Buttons',
         routerLink: '/components/button',
         icon: 'fa-toggle-on',
         isActive: false

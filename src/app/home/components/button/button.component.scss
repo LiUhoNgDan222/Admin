@@ -1,0 +1,12 @@
+@import "../../../../assets/scss/base";
+@import "../../../../assets/scss/switch";
+@import "../../../../assets/scss/radioAndCheckbox";
+.wrap {
+  .page-header {
+    height: 200px;
+  }
+  .container-fluid {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
