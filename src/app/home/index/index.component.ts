@@ -1,13 +1,10 @@
 import {Component, OnInit, ElementRef, ViewChild} from '@angular/core';
-import {StatisticsService} from '../../shared/xincai_service/statistics.service';
-import {OpenToastrService} from '../../shared/xincai_service/open-toastr.service';
 import * as echarts from 'echarts';
 
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
-  styleUrls: ['./index.component.scss'],
-  providers: [StatisticsService]
+  styleUrls: ['./index.component.scss']
 })
 export class IndexComponent implements OnInit {
 
@@ -22,14 +19,11 @@ export class IndexComponent implements OnInit {
   public today_betting_amount: number; // 今日统计投注额
   public yesterday_profit_los: number; // 昨日统计盈亏
   public yesterday_betting_amount: number; // 昨日统计投注额
-  public userData: any[] = []; // 用户统计数据
-  public todayData: any[] = []; // 今日数据
   public lottery_bets_statistics_list: any[] = []; // 彩种投注金额统计
-  public gameplay_statistics_list: any[] = []; // 玩法统计
   public month: number;  // 当前月
   public year: number; // 当前年
 
-  constructor(protected statisticsService: StatisticsService, protected openToastrService: OpenToastrService, protected el: ElementRef) {
+  constructor() {
   }
 
   protected todayDataOption = {

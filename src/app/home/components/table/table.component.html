@@ -1,0 +1,78 @@
+<div class="wrap">
+  <div class="page-header">
+    <h1>Table</h1>
+    <div class="path-breadcrumb">
+      <ol class="breadcrumb">
+        <li><a href="https://github.com/swimlane/ngx-datatable">
+          <span class="fa fa-table"></span> 第三方组件ngx-datatable</a></li>
+      </ol>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="table-container">
+      <div class="search">
+        <form class="form-inline">
+          <div class="form-group">
+            <label> 排序：</label>
+            <select class="form-control" name="category" id="category">
+              <option value="" selected>默认排序</option>
+              <option value="">账号金额</option>
+              <option value="">投注金额</option>
+              <option value="">中奖金额</option>
+              <option value="">返点</option>
+              <option value="">累计积分</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label> 用户名：</label>
+            <input type="text" class="form-control" placeholder="请输入用户名">
+          </div>
+          <button class="btn btn-primary"><i class="fa fa-search"></i> 搜索</button>
+        </form>
+      </div>
+      <div class="table">
+        <ngx-datatable class="material"
+                       [headerHeight]="50"
+                       [rows]="list_rows"
+                       [columns]="list_columns"
+                       [columnMode]="'force'"
+                       [scrollbarH]="true"
+                       [footerHeight]="'70'"
+                       [rowHeight]="'auto'"
+                       [loadingIndicator]="list_loading"
+                       [sortType]="'multi'"
+                       [externalPaging]="true"
+                       [externalSorting]="true"
+                       (page)="onPage($event)"
+                       (sort)="onSort($event)"
+                       [count]="list_count"
+                       [offset]="list_page.index"
+                       [limit]="list_page.count">
+        </ngx-datatable>
+
+        <ng-template #template_type let-row="row" let-value="value">
+          <div class="btn-group btn-group-sm" role="group">
+            <span class="label label-0" *ngIf="row['type']==0">代理</span>
+            <span class="label label-1" *ngIf="row['type']==1">会员</span>
+          </div>
+        </ng-template>
+        <ng-template #template_status let-row="row" let-value="value">
+          <div class="btn-group btn-group-sm" role="group">
+            <span class="label label-1" *ngIf="row['status']==0">离线</span>
+            <span class="label label-0" *ngIf="row['status']==1">在线</span>
+          </div>
+        </ng-template>
+        <ng-template #template_op let-row="row" let-value="value">
+          <div class="btn-group btn-group-sm">
+            <a class="btn btn-sm btn-deepgrey" (click)="onRowAdd(+row['id'])" title="添加">统计</a>
+            <a class="btn btn-sm btn-primary" (click)="onRowAdd(+row['id'])" title="添加">帐变</a>
+            <a class="btn btn-sm btn-info" (click)="onRowAdd(+row['id'])" title="添加">下级</a>
+            <a class="btn btn-sm btn-success" (click)="onRowAdd(+row['id'])" title="添加">踢下线</a>
+            <a class="btn btn-sm btn-warning" (click)="onRowAdd(+row['id'])" title="编辑"><i class="fa fa-edit"></i></a>
+            <a class="btn btn-sm btn-danger" (click)="onRowAdd(+row['id'])" title="删除"><i class="fa fa-trash"></i></a>
+          </div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>

@@ -6,16 +6,16 @@ import {NG_VALUE_ACCESSOR} from '@angular/forms';
 declare var moment: any;
 
 @Component({
-  selector: 'app-date-picker',
-  templateUrl: './date-picker.component.html',
-  styleUrls: ['date-picker.component.scss'],
+  selector: 'app-date-time-picker',
+  templateUrl: './date-time-picker.component.html',
+  styleUrls: ['date-time-picker.component.scss'],
   providers: [{
     provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => DatePickerComponent),
+    useExisting: forwardRef(() => DateTimePickerComponent),
     multi: true
   }]
 })
-export class DatePickerComponent implements OnInit {
+export class DateTimePickerComponent implements OnInit {
   // 默认时间
   public dateInput: any = {
     start: moment().startOf('days'),
@@ -27,7 +27,7 @@ export class DatePickerComponent implements OnInit {
 
   // 日期格式配置
   public options: any = {
-    locale: {format: 'YYYY-MM-DD',
+    locale: {format: 'YYYY-MM-DD HH:mm:ss',
       applyLabel: '确定',
       cancelLabel: '取消',
       fromLabel: '起始时间',
@@ -40,7 +40,10 @@ export class DatePickerComponent implements OnInit {
       maxDays: 0
     },
     alwaysShowCalendars: false,
-    singleDatePicker: true
+    singleDatePicker: true,
+    timePicker: true,
+    timePicker24Hour: true,
+    timePickerSeconds: true
   };
 
   constructor(private daterangepickerOptions: DaterangepickerConfig) {

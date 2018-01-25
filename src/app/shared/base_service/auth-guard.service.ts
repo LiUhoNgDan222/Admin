@@ -7,7 +7,7 @@ import {
 } from '@angular/router';
 
 import { AuthService } from './auth.service';
-import { OpenToastrService } from '../xincai_service/open-toastr.service';
+import { OpenToastrService } from '../service/open-toastr.service';
 
 @Injectable()
 export class AuthGuardService implements CanActivate, CanActivateChild {
@@ -22,10 +22,6 @@ export class AuthGuardService implements CanActivate, CanActivateChild {
             this.toastrService.openToast('warning', '未登录', '账户未登录, 请先登录!');
             this.router.navigate(['/account/login']);
         }
-
-        let url: string = state.url;
-        console.log(`IsAuthenticated: ${url}`);
-
         return true;
     }
 

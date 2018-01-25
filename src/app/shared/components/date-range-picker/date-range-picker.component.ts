@@ -1,23 +1,27 @@
-import { Component, OnInit, EventEmitter, Output} from '@angular/core';
-import { DaterangepickerConfig } from 'ng2-daterangepicker';
+import {Component, OnInit, EventEmitter, Output} from '@angular/core';
+import {DaterangepickerConfig} from 'ng2-daterangepicker';
+import {forwardRef} from '@angular/core';
+import {NG_VALUE_ACCESSOR} from '@angular/forms';
+
 declare var moment: any;
 
-// 今天、昨天、本月、上月  时间设置
+// 今天、昨天、明天  时间设置
 const ranges = [
-  [moment().startOf('days'), moment()],
   [moment().subtract(1, 'days').startOf('days'), moment().subtract(1, 'days').endOf('days')],
-  [moment().startOf('month'), moment()],
-  [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+  [moment().startOf('days'), moment()]
 ];
 
 @Component({
   selector: 'app-date-range-picker',
   templateUrl: './date-range-picker.component.html',
-  styleUrls: ['date-range-picker.component.scss']
+  styleUrls: ['date-range-picker.component.scss'],
+  providers: [{
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() => DateRangePickerComponent),
+    multi: true
+  }]
 })
 export class DateRangePickerComponent implements OnInit {
-
-  @Output() timepicker: EventEmitter<number> = new EventEmitter<number>();
   // 默认时间
   public dateInput: any = {
     start: moment().startOf('days'),
@@ -29,7 +33,18 @@ export class DateRangePickerComponent implements OnInit {
 
   // 日期格式配置
   public options: any = {
-    locale: { format: 'YYYY-MM-DD' },
+    locale: {format: 'YYYY-MM-DD',
+      applyLabel: '确定',
+      cancelLabel: '取消',
+      fromLabel: '起始时间',
+      toLabel: '结束时间',
+      customRangeLabel: '自定义',
+      daysOfWeek: ['日', '一', '二', '三', '四', '五', '六'],
+      monthNames: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+      firstDay: 1,
+      minDays: 0,
+      maxDays: 0
+    },
     alwaysShowCalendars: false
   };
 
@@ -39,26 +54,45 @@ export class DateRangePickerComponent implements OnInit {
     this.daterangepickerOptions.settings = this.options;
   }
 
+  public onModelChange: Function = () => {};
+  public onModelTouched: Function = () => {};
+  writeValue(value: any) {
+    if (value) {
+      this.daterange = value;
+      this.dateInput = value;
+    }else {
+      this.dateInput.start = '';
+      this.dateInput.end = '';
+      this.daterange.start = '';
+      this.daterange.end = '';
+    }
+  }
+  registerOnChange(fn: Function): void {
+    this.onModelChange = fn;
+  }
+  registerOnTouched(fn: Function): void {
+    this.onModelTouched = fn;
+  }
+
 // 选择时间范围
   public selectedDate(value: any) {
-    this.daterange.start = value.start.format('YYYY-MM-DD');
-    this.daterange.end = value.end.format('YYYY-MM-DD');
+    this.daterange.start = value.start;
+    this.daterange.end = value.end;
 
     this.dateInput.start = value.start;
     this.dateInput.end = value.end;
-    // console.log("子组件日期-自定义范围");
-    this.timepicker.emit(this.daterange);
+
+    this.onModelChange(this.daterange);
   }
 
   public range(index: number) {
-    this.daterange.start = ranges[index][0].format('YYYY-MM-DD');
-    this.daterange.end =  ranges[index][1].format('YYYY-MM-DD');
+    this.daterange.start = ranges[index][0];
+    this.daterange.end = ranges[index][1];
 
     this.dateInput.start = ranges[index][0];
     this.dateInput.end = ranges[index][1];
 
-    // console.log("子组件日期-固定范围");
-    this.timepicker.emit(this.daterange);
+    this.onModelChange(this.daterange);
   }
 
   ngOnInit() {

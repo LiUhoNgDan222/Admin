@@ -8,27 +8,13 @@ import {ToastrModule} from 'ngx-toastr';
 import {AuthService} from './base_service/auth.service';
 import {AuthGuardService} from './base_service/auth-guard.service';
 import {AccountStorage} from './storage/account.storage';
-import {OpenToastrService} from './xincai_service/open-toastr.service';
-import {AppApiService} from './base_service/app-api.service';
-import {AppConfigService} from './base_service/app-config.service';
-
-
-// export function createTranslateLoader(http: Http) {
-//   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
-// }
+import {OpenToastrService} from './service/open-toastr.service';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
-    ToastrModule.forRoot(),
-    // TranslateModule.forRoot({
-    //   loader: {
-    //     provide: TranslateLoader,
-    //     useFactory: (createTranslateLoader),
-    //     deps: [Http]
-    //   }
-    // })
+    ToastrModule.forRoot()
   ],
   declarations: [],
   exports: [
@@ -45,9 +31,7 @@ export class SharedServicesModule {
         AuthGuardService,
         AuthService,
         AccountStorage,
-        OpenToastrService,
-        AppApiService,
-        AppConfigService
+        OpenToastrService
       ]
     };
   }

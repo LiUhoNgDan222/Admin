@@ -21,19 +21,18 @@ export const menus = [
     plusActive : 'active',
     minusActive: 'inactive',
     icon: 'fa-asterisk',
-    routerLink: '',
     list: [
       {
         id: 1,
         item: 'table',
-        routerLink: '/pipeline/presentRequest',
+        routerLink: '/components/table',
         icon: 'fa-table',
         isActive: false
       },
       {
         id: 2,
         item: 'button',
-        routerLink: '/pipeline/presentRequest',
+        routerLink: '/components/button',
         icon: 'fa-toggle-on',
         isActive: false
       },

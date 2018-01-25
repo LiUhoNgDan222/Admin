@@ -1,15 +1,13 @@
 <div class="input-group datepicker" daterangepicker [options]="{startDate:dateInput.start, endDate:dateInput.end }"
      (selected)="selectedDate($event)">
   <span class="form-control uneditable-input" name="daterange">
-      {{ dateInput.start | date:'yyyy-MM-dd' }} - {{ dateInput.end| date:'yyyy-MM-dd' }}
+      {{ dateInput.start | date:'yyyy-MM-dd' }}<i *ngIf="dateInput.start">~</i>{{ dateInput.end| date:'yyyy-MM-dd' }}
   </span>
   <span class="input-group-btn">
   <a type="button" class="btn btn-default"><i class="fa fa-calendar"></i></a>
   </span>
 </div>
 <div class="btn-group">
-  <button (click)="range(0)" class="btn btn-info">今天</button>
-  <button (click)="range(1)" class="btn btn-info">昨天</button>
-  <button (click)="range(2)" class="btn btn-info">本月</button>
-  <button (click)="range(3)" class="btn btn-info">上月</button>
+  <a (click)="range(0)" class="btn-link">前一天</a>
+  <a (click)="range(1)" class="btn-link">今天</a>
 </div>

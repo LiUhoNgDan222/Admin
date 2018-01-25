@@ -11,7 +11,8 @@ const routes: Routes = [
     children: [{
       path: '',
       children: [
-        { path: '', loadChildren: './index/index.module#IndexModule' }
+        { path: '', loadChildren: './index/index.module#IndexModule' },
+        { path: 'components', loadChildren: './components/components.module#ComponentsModule' }
       ]
     }]
   }

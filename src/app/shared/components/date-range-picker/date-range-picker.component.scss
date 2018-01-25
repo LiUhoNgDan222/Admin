@@ -1,7 +1,19 @@
 .datepicker{
-  z-index: 1;
+  z-index: 0;
   .btn {
     padding: 6px 18px;
+  }
+  &> .form-control {
+    min-width: 200px !important;
+  }
+}
+.btn-group{
+  margin: 0 6px;
+  .btn-link{
+    padding: 0;
+    &:hover{
+      text-decoration: none;
+    }
   }
 }
 
