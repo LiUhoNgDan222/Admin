@@ -8,7 +8,7 @@
   box-shadow: 0 1px 1px rgba(0,0,0,.1);
   margin-bottom: 30px;
   position: relative;
-  padding-bottom: 20px;
+  font-family: Poppins,sans-serif;
   .card-heading {
     padding: 15px 20px;
     position: relative;
@@ -17,10 +17,14 @@
       padding-top: 4px;
     }
     h2.card-title {
-      font-size: 1.25em;
+      font-size: 1.43em;
       margin: 0;
       font-weight: 400;
       color: #516073;
+    }
+    P {
+      padding: 7px 0;
+      color: $p-font;
     }
   }
   .card-body {
