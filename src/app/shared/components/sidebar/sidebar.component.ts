@@ -31,11 +31,14 @@ export class SidebarComponent implements OnInit, AfterViewInit, OnDestroy {
   constructor( protected router: Router) { }
 
   ngOnInit () {
+    this.statePath.index = 0;
+    this.statePath.pathId = '-1';
     this.statePath.index = sessionStorage.getItem('StatePath1');
     this.statePath.pathId = sessionStorage.getItem('StatePath2');
   }
 
   ngAfterViewInit () {
+    console.log(this.statePath);
     if (this.statePath.pathId) {
       setTimeout(() => {
         this.changeClass(this.statePath.index - 0, this.statePath.pathId - 0, true);

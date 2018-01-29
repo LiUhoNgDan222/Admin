@@ -15,7 +15,7 @@ export const menus = [
   },
   {
     index: 1,
-    id: 'noPreset',
+    id: 'components',
     item: '组件示例',
     isActive: false,
     plusActive : 'active',
@@ -43,6 +43,38 @@ export const menus = [
         icon: 'fa-calendar',
         isActive: false
       },
+    ]
+  },
+  {
+    index: 2,
+    id: 'pages',
+    item: '页面示例',
+    isActive: false,
+    plusActive : 'active',
+    minusActive: 'inactive',
+    icon: 'fa-file',
+    list: [
+      {
+        id: 1,
+        item: 'Profile',
+        routerLink: '/pages/profile',
+        icon: 'fa-user',
+        isActive: false
+      },
+      {
+        id: 2,
+        item: '404',
+        routerLink: '/404',
+        icon: 'fa-exclamation-triangle',
+        isActive: false
+      },
+      {
+        id: 3,
+        item: 'Mail',
+        routerLink: '/pages/mail',
+        icon: 'fa-envelope-o',
+        isActive: false
+      }
     ]
   }
   // {
