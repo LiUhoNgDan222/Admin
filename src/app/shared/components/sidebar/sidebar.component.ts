@@ -1,13 +1,13 @@
-import { Component, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
-import { trigger, state, style, animate, transition } from '@angular/animations';
-import { Router } from '@angular/router';
-import { menus } from './menus';
+import {Component, OnInit, AfterViewInit, OnDestroy} from '@angular/core';
+import {trigger, state, style, animate, transition} from '@angular/animations';
+import {Router} from '@angular/router';
+import {menus} from './menus';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss'],
-  animations: [ trigger('showArrow', [
+  animations: [trigger('showArrow', [
     state('active', style({
       opacity: 1,
       transform: 'scale(1)'
@@ -28,27 +28,35 @@ export class SidebarComponent implements OnInit, AfterViewInit, OnDestroy {
     pathId: ''  // 路径ID
   };
 
-  constructor( protected router: Router) { }
+  constructor(protected router: Router) {
+  }
 
-  ngOnInit () {
+  ngOnInit() {
     this.statePath.index = 0;
     this.statePath.pathId = '-1';
     this.statePath.index = sessionStorage.getItem('StatePath1');
     this.statePath.pathId = sessionStorage.getItem('StatePath2');
   }
 
-  ngAfterViewInit () {
-    console.log(this.statePath);
+  ngAfterViewInit() {
     if (this.statePath.pathId) {
       setTimeout(() => {
         this.changeClass(this.statePath.index - 0, this.statePath.pathId - 0, true);
+      });
+    } else {
+      this.statePath.index = 0;
+      this.statePath.pathId = '-1';
+      console.log(this.statePath);
+      setTimeout(() => {
+        this.changeClass(this.statePath.index - 0, this.statePath.pathId - 0, true);
+        this.changeArrow(this.statePath.index - 0, '/');
       });
     }
   }
 
   // 改变小图标
   public changeArrow(index: any, routeLink: any) {
-    if ( routeLink !== undefined) {
+    if (routeLink !== undefined) {
       sessionStorage.setItem('StatePath1', index);
       sessionStorage.setItem('StatePath2', '-1');
       this.router.navigate([routeLink]);
@@ -58,7 +66,8 @@ export class SidebarComponent implements OnInit, AfterViewInit, OnDestroy {
         menu.isActive = !menu.isActive;
         menu.plusActive = menu.isActive ? 'inactive' : 'active';
         menu.minusActive = menu.isActive ? 'active' : 'inactive';
-      }else {
+        console.log(this.menus);
+      } else {
         menu.isActive = false;
         menu.plusActive = 'active';
         menu.minusActive = 'inactive';
@@ -67,6 +76,7 @@ export class SidebarComponent implements OnInit, AfterViewInit, OnDestroy {
         });
       }
     });
+
   }
 
   // 修改点击之后菜单的样式
@@ -75,6 +85,7 @@ export class SidebarComponent implements OnInit, AfterViewInit, OnDestroy {
       if (menuIndex === menu.index) {
         if (type) {
           menu.isActive = !menu.isActive;
+          console.log(this.menus);
           if (listIndex !== '-1') {
             const dom = document.getElementById(menu.id);
             if (dom) {
@@ -83,7 +94,7 @@ export class SidebarComponent implements OnInit, AfterViewInit, OnDestroy {
           }
         }
         menu.list.forEach((list, index2) => {
-          if ( listIndex === index2 + 1) {
+          if (listIndex === index2 + 1) {
             list.isActive = true;
             if (type) {
               menu.plusActive = menu.isActive ? 'inactive' : 'active';
@@ -92,7 +103,7 @@ export class SidebarComponent implements OnInit, AfterViewInit, OnDestroy {
               sessionStorage.setItem('StatePath1', menuIndex);
               sessionStorage.setItem('StatePath2', listIndex);
             }
-          }else {
+          } else {
             list.isActive = false;
           }
         });
@@ -100,7 +111,7 @@ export class SidebarComponent implements OnInit, AfterViewInit, OnDestroy {
     });
   }
 
-  ngOnDestroy () {
+  ngOnDestroy() {
     sessionStorage.removeItem('StatePath1');
     sessionStorage.removeItem('StatePath2');
     this.statePath = {
@@ -109,7 +120,7 @@ export class SidebarComponent implements OnInit, AfterViewInit, OnDestroy {
     };
     this.menus.forEach((menu) => {
       menu.isActive = false;
-      menu.list.forEach( (list) => {
+      menu.list.forEach((list) => {
         list.isActive = false;
       });
     });

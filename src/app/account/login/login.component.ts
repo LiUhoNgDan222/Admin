@@ -25,9 +25,8 @@ export class LoginComponent implements OnInit {
   }
 
   protected doLogin(): void {
-    console.log(this.username);
-    console.log(this.password);
-
+    // console.log(this.username);
+    // console.log(this.password);
 
     // 将用户信息保存
     this.authService.Authenticate(this.username, 1342423, 'sdfsdgvsdgv', '64782365225r2fger');
