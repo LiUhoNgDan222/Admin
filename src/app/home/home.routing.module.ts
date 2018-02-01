@@ -12,7 +12,8 @@ const routes: Routes = [
       path: '',
       children: [
         { path: '', loadChildren: './index/index.module#IndexModule' },
-        { path: 'components', loadChildren: './components/components.module#ComponentsModule' }
+        { path: 'components', loadChildren: './components/components.module#ComponentsModule' },
+        { path: 'pages', loadChildren: './pages/pages.module#PagesModule' }
       ]
     }]
   }

@@ -46,7 +46,6 @@ export class SidebarComponent implements OnInit, AfterViewInit, OnDestroy {
     } else {
       this.statePath.index = 0;
       this.statePath.pathId = '-1';
-      console.log(this.statePath);
       setTimeout(() => {
         this.changeClass(this.statePath.index - 0, this.statePath.pathId - 0, true);
         this.changeArrow(this.statePath.index - 0, '/');
@@ -66,7 +65,6 @@ export class SidebarComponent implements OnInit, AfterViewInit, OnDestroy {
         menu.isActive = !menu.isActive;
         menu.plusActive = menu.isActive ? 'inactive' : 'active';
         menu.minusActive = menu.isActive ? 'active' : 'inactive';
-        console.log(this.menus);
       } else {
         menu.isActive = false;
         menu.plusActive = 'active';
@@ -85,7 +83,6 @@ export class SidebarComponent implements OnInit, AfterViewInit, OnDestroy {
       if (menuIndex === menu.index) {
         if (type) {
           menu.isActive = !menu.isActive;
-          console.log(this.menus);
           if (listIndex !== '-1') {
             const dom = document.getElementById(menu.id);
             if (dom) {

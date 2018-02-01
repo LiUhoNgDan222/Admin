@@ -1,0 +1,182 @@
+@import "../../../../assets/scss/base";
+
+.nav-tabs {
+  border: none;
+  background: #fff;
+  list-style: none;
+  padding: 0;
+  white-space: nowrap;
+  margin: 0;
+  width: 100%;
+  box-shadow: inset 0 -2px 0 0 #e6edf1;
+}
+
+li.active {
+  border-bottom: 2px solid $bg-primary;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+  text-decoration: none;
+  background-color: #fff !important;
+  color: $bg-primary !important;
+}
+
+.nav-tabs.nav-justified > .active > a, .nav-tabs.nav-justified > .active > a:focus, .nav-tabs.nav-justified > .active > a:hover, .nav-tabs.nav-justified > li > a {
+  border: none;
+}
+
+.nav-tabs.nav-justified > .active > a, .nav-tabs.nav-justified > li > a {
+  font-size: 14px;
+  padding: 21px 0;
+}
+
+.nav-tabs.nav-justified > li > a {
+  margin-bottom: 0;
+  color: #688696;
+}
+
+.wrap {
+  .container-fluid {
+    padding-right: 30px;
+    padding-left: 30px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    .info {
+      margin-top: 10px;
+      border: 1px solid #ededed;
+      box-shadow: 0 -5px 0 0 $theme-color;
+      border-top: 4px solid $theme-color;
+      background-color: #fff;
+    }
+    .user-info {
+      box-shadow: 0 2px 4px #eee;
+      margin-top: 20px;
+      h2 {
+        margin-left: 15px;
+        margin-bottom: 15px;
+        font-size: 22px;
+        i {
+          color: $theme-color;
+        }
+      }
+      .user-base-info {
+        .list-group {
+          .list-group-item {
+            padding: 15px;
+            border-left: none;
+            border-bottom: none;
+            border-right: none;
+            border-radius: 0;
+
+            &:nth-child(odd) {
+              background-color: #eef5f9;
+            }
+
+            & > b {
+              display: inline-block;
+              width: 49%;
+            }
+            & > span {
+              display: inline-block;
+              width: 49%;
+            }
+          }
+        }
+      }
+    }
+
+    .bind-info {
+      margin-top: 40px;
+      box-shadow: 0 2px 4px #eee;
+      h2 {
+        margin-left: 15px;
+        margin-bottom: 15px;
+        font-size: 22px;
+        i {
+          color: $theme-color;
+        }
+      }
+      .bind-info-btn {
+        border-top: 1px solid #ddd;
+        padding: 20px 15px;
+        button {
+          margin-right: 8px;
+          margin-top: 10px;
+        }
+      }
+    }
+
+    .info-tab {
+      margin-top: 20px;
+      .tab-content {
+        background-color: #fff;
+        margin-top: 0;
+        padding-top: 10px;
+        padding-right: 10px;
+      }
+      .modify-pwd {
+        form {
+          padding: 20px 30px 50px 20px;
+          background-color: #fff;
+          .form-group {
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+
+    .login-info {
+      width: 100%;
+      padding-bottom: 40px;
+      background-color: #fff;
+      .main-time-line {
+        margin: 10px 0 0 20px;
+        padding-right: 10px;
+        .time-line {
+          box-shadow: 0 2px 4px #eee;
+          margin-top: 20px;
+          padding: 5px 15px;
+          border-bottom: 1px solid #e7e7e7;
+          border-top: 1px solid #e7e7e7;
+          border-right: 1px solid #e7e7e7;
+          .time-line-date {
+            margin-bottom: 10px;
+          }
+          .time-line-info {
+            margin-left: 20px;
+            margin-bottom: 10px;
+
+            span {
+              color: $theme-color;
+              margin-left: 20px;
+            }
+          }
+          &:nth-child(5n+1) {
+            border-left: 8px solid $bg-info;
+          }
+          &:nth-child(5n+2) {
+            border-left: 8px solid $bg-warning;
+          }
+          &:nth-child(5n+3) {
+            border-left: 8px solid $bg-primary;
+          }
+          &:nth-child(5n+4) {
+            border-left: 8px solid $bg-success;
+          }
+          &:nth-child(5n+5) {
+            border-left: 8px solid $bg-danger;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrap {
+    .container-fluid {
+      margin-top: 0;
+    }
+  }
+}
+
