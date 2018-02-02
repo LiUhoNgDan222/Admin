@@ -1,127 +1,250 @@
 <div class="wrap">
   <div class="page-header">
-    <h1>Buttons</h1>
+    <h1>收件箱</h1>
     <div class="path-breadcrumb">
       <ol class="breadcrumb">
         <li><a [routerLink]="['/']"><span class="fa fa-home"></span> Dashboard</a></li>
-        <li>components</li>
-        <li>button</li>
+        <li>pages</li>
+        <li>mail</li>
       </ol>
     </div>
   </div>
-  <div class="container-fluid clearfix">
-    <!--Raised Buttons-->
-    <div class="card">
-      <header class="card-heading ">
-        <h2 class="card-title">Raised Buttons</h2>
-        <p>Raised buttons are used to add dimension and emphasizes important functions.</p>
-      </header>
-      <div class="card-body">
-        <a href="javascript:void(0)" class="btn btn-default">DEFAULT</a>
-        <a href="javascript:void(0)" class="btn btn-primary">PRIMARY</a>
-        <a href="javascript:void(0)" class="btn btn-success">SUCCESS</a>
-        <a href="javascript:void(0)" class="btn btn-info">INFO</a>
-        <a href="javascript:void(0)" class="btn btn-warning">WARNING</a>
-        <a href="javascript:void(0)" class="btn btn-danger">DANGER</a>
+  <div class="container-fluid">
+    <div class="search">
+      <form class="form-inline">
+        <div class="form-group">
+          <label for="username"> 用户名：</label>
+          <input type="text" class="form-control" placeholder="用户名" id="username" name="username" [(ngModel)]="username">
+        </div>
+        <div class="form-group">
+          <label for="ip"> IP：</label>
+          <input type="text" class="form-control" placeholder="IP" id="ip" name="ip" [(ngModel)]="ip">
+        </div>
+        <div class="form-group">
+          <label>时间：</label>
+          <app-date-range-picker name="date-range-picker" [(ngModel)]="date"></app-date-range-picker>
+        </div>
+        <div class="form-group">
+          <label> 状态：</label>
+          <select class="form-control" name="liq_type" id="liq_type" [(ngModel)]="state">
+            <option value="3">所有</option>
+            <option value="2">已读</option>
+            <option value="1">未读</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary" (click)="search(0)"><i class="fa fa-search"></i> 查找</button>
+          <button class="btn btn-default" (click)="reset()">重置</button>
+        </div>
+      </form>
+    </div>
+    <div class="mail-wrapper">
+      <div class="row">
+        <div class="col-xs-12">
+          <ul class="panel-group list-group" id="mail" aria-multiselectable="true">
+            <div class="block-header" *ngIf="todayList.length" >
+              <h5>Today({{todayList.length}}封)</h5>
+              <ul class="card-actions icons right-top">
+                <li>
+                  <a href="javascript:void(0)" (click)="selectAll(0)"> <i class="fa fa-check"></i> </a>
+                </li>
+              </ul>
+            </div>
+            <li class="panel mail-item" *ngFor="let item of todayList" [ngClass]="{active: item.isActive}" >
+              <label class="checkbox-inline">
+                <input #input0 type="checkbox" value="item.mid" (click)="changeDeleteId(item.mid,0)">
+                <span class="checkbox-material"><span class="check"></span></span>
+              </label>
+              <a class="list-group-item collapsed" [ngClass]="{highlight: item.isClick}" href="#{{item.mid}}" data-toggle="collapse" data-parent="#mail"
+                 aria-expanded="true" (click)="changeClass(item.mid)">
+                <span class="avatar"><img src="{{item.header}}"></span>
+                <div class="sender-wrapper"><span class="sender">{{item.from_username}}</span></div>
+                <div class="sender-wrapper"><span class="sender">{{item.time* 1000 | date : 'yyyy-MM-dd HH:mm:ss'}}</span></div>
+                <div class="theme-wrapper"><span class="theme">{{item.title}}</span></div>
+              </a>
+              <ul class="card-actions icons right-top">
+                <li class="dropdown">
+                  <a href="javascript:void(0)" class="option" data-toggle="dropdown" aria-expanded="false"> <i
+                    class="fa fa-ellipsis-v"></i> </a>
+                  <ul class="dropdown-menu dropdown-menu-right">
+                    <li><a href="javascript:void(0)"><i class="fa fa-trash"></i> 删除邮件
+                      <div class="ripple-container"></div>
+                    </a></li>
+                  </ul>
+                </li>
+              </ul>
+              <ul class="panel-collapse collapse" id="{{item.mid}}">
+                <div class="panel-body">
+                  <p>{{item.content}}</p>
+                  <p>Four dollar toast subway tile franzen banh mi flannel crucifix raclette, cliche small batch plaid. Hot chicken banh mi pork belly, tacos letterpress cold-pressed pabst seitan hell of actually salvia. Shabby chic hexagon listicle, trust fund banh mi post-ironic affogato cardigan biodiesel cronut green juice austin vexillologist YOLO. Pinterest tumeric twee, intelligentsia typewriter you probably haven't heard of them hammock disrupt chambray coloring book chia. Occupy truffaut freegan, offal tote bag stumptown skateboard cardigan wolf live-edge cronut pabst. Shabby chic squid iPhone, normcore tousled tacos raclette la croix disrupt meggings shoreditch actually street art cornhole try-hard. Actually la croix narwhal plaid.</p>
+                  <p>Pitchfork semiotics franzen mustache banjo viral. Schlitz hell of selvage, actually yr hella chambray enamel pin. Migas af cornhole, selvage street art truffaut pitchfork squid. Fingerstache seitan hammock, blog sartorial humblebrag truffaut pork belly. Post-ironic sustainable locavore kale chips, food truck pickled cornhole gochujang cold-pressed jianbing plaid. Portland lyft messenger bag, glossier fingerstache cornhole fashion axe fam bitters kogi next level yr cray jianbing. Iceland raw denim put a bird on it asymmetrical craft beer cliche.</p>
+                </div>
+                <div class="panel-footer">
+                  <span class="avatar"><img src="../../../../assets/images/header.jpg" alt="LiUhoNgDan"></span>
+                  <div class="sender-wrapper"><span class="sender">{{account?.username}}</span></div>
+                  <ul class="card-actions icons">
+                    <li class="dropdown">
+                      <a href="###" class="option" (click)="getMsg(item.mid,0)" data-toggle="modal" data-target="#sendMsgModal">
+                        <i class="fa fa-arrow-circle-right"></i> </a>
+                    </li>
+                  </ul>
+                </div>
+              </ul>
+            </li>
+            <div class="block-header" *ngIf="yesterdayList.length">
+              <h5>Yesterday({{yesterdayList.length}}封)</h5>
+              <ul class="card-actions icons right-top">
+                <li>
+                  <a href="javascript:void(0)" (click)="selectAll(1)"> <i class="fa fa-check"></i> </a>
+                </li>
+              </ul>
+            </div>
+            <li class="panel mail-item" *ngFor="let item of yesterdayList" [ngClass]="{active: item.isActive}" >
+              <label class="checkbox-inline">
+                <input #input1 type="checkbox" value="item.mid" (click)="changeDeleteId(item.mid,1)">
+                <span class="checkbox-material"><span class="check"></span></span>
+              </label>
+              <a class="list-group-item collapsed" [ngClass]="{highlight: item.isClick}" href="#{{item.mid}}" data-toggle="collapse" data-parent="#mail"
+                 aria-expanded="true" (click)="changeClass(item.mid)">
+                <span class="avatar"><img src="{{item.header}}"></span>
+                <div class="sender-wrapper"><span class="sender">{{item.from_username}}</span></div>
+                <div class="sender-wrapper"><span class="sender">{{item.time* 1000 | date : 'yyyy-MM-dd HH:mm:ss'}}</span></div>
+                <div class="theme-wrapper"><span class="theme">{{item.title}}</span></div>
+              </a>
+              <ul class="card-actions icons right-top">
+                <li class="dropdown">
+                  <a href="javascript:void(0)" class="option" data-toggle="dropdown" aria-expanded="false"> <i
+                    class="fa fa-ellipsis-v"></i> </a>
+                  <ul class="dropdown-menu dropdown-menu-right">
+                    <li><a href="javascript:void(0)"><i class="fa fa-trash"></i> 删除邮件
+                      <div class="ripple-container"></div>
+                    </a></li>
+                  </ul>
+                </li>
+              </ul>
+              <ul class="panel-collapse collapse" id="{{item.mid}}">
+                <div class="panel-body">
+                  <p>{{item.content}}</p>
+                </div>
+                <div class="panel-footer">
+                  <span class="avatar"><img src="../../../../assets/images/header.jpg" alt="LiUhoNgDan"></span>
+                  <div class="sender-wrapper"><span class="sender">{{account?.username}}</span></div>
+                  <ul class="card-actions icons">
+                    <li class="dropdown">
+                      <a href="###" class="option" (click)="getMsg(item.mid,1)" data-toggle="modal" data-target="#sendMsgModal">
+                        <i class="fa fa-arrow-circle-right"></i> </a>
+                    </li>
+                  </ul>
+                </div>
+              </ul>
+            </li>
+            <div class="block-header" *ngIf="beforeList.length">
+              <h5>更早({{beforeList.length}}封)</h5>
+              <ul class="card-actions icons right-top">
+                <li>
+                  <a href="javascript:void(0)" (click)="selectAll(2)"> <i class="fa fa-check"></i> </a>
+                </li>
+              </ul>
+            </div>
+            <li class="panel mail-item" *ngFor="let item of beforeList" [ngClass]="{active: item.isActive}" >
+              <label class="checkbox-inline">
+                <input #input2 type="checkbox" value="item.mid" (click)="changeDeleteId(item.mid,2)">
+                <span class="checkbox-material"><span class="check"></span></span>
+              </label>
+              <a class="list-group-item collapsed" [ngClass]="{highlight: item.isClick}" href="#{{item.mid}}" data-toggle="collapse" data-parent="#mail"
+                 aria-expanded="true" (click)="changeClass(item.mid)">
+                <span class="avatar"><img src="{{item.header}}"></span>
+                <div class="sender-wrapper"><span class="sender">{{item.from_username}}</span></div>
+                <div class="sender-wrapper"><span class="sender">{{item.time* 1000 | date : 'yyyy-MM-dd HH:mm:ss'}}</span></div>
+                <div class="theme-wrapper"><span class="theme">{{item.title}}</span></div>
+              </a>
+              <ul class="card-actions icons right-top">
+                <li class="dropdown">
+                  <a href="javascript:void(0)" class="option" data-toggle="dropdown" aria-expanded="false"> <i
+                    class="fa fa-ellipsis-v"></i> </a>
+                  <ul class="dropdown-menu dropdown-menu-right">
+                    <li><a href="javascript:void(0)"><i class="fa fa-trash"></i> 删除邮件
+                      <div class="ripple-container"></div>
+                    </a></li>
+                  </ul>
+                </li>
+              </ul>
+              <ul class="panel-collapse collapse" id="{{item.mid}}">
+                <div class="panel-body">
+                  <p>{{item.content}}</p>
+                </div>
+                <div class="panel-footer">
+                  <span class="avatar"><img src="../../../../assets/images/header.jpg" alt="LiUhoNgDan"></span>
+                  <div class="sender-wrapper"><span class="sender">{{account?.username}}</span></div>
+                  <ul class="card-actions icons">
+                    <li class="dropdown">
+                      <a href="###" class="option" (click)="getMsg(item.mid,2)" data-toggle="modal" data-target="#sendMsgModal">
+                        <i class="fa fa-arrow-circle-right"></i> </a>
+                    </li>
+                  </ul>
+                </div>
+              </ul>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-    <!--Round Buttons-->
-    <div class="card">
-      <header class="card-heading ">
-        <h2 class="card-title">Round Buttons</h2>
-        <p>Raised buttons are used to add dimension and emphasizes important functions.</p>
-      </header>
-      <div class="card-body clearfix">
-        <div class="col-lg-6 col-md-6">
-          <h3>Default</h3>
-          <a href="javascript:void(0)" class="btn btn-default btn-fab"><i class="fa fa-ellipsis-v"></i></a>
-          <a href="javascript:void(0)" class="btn btn-primary btn-fab"><i class="fa fa-plus"></i></a>
-          <a href="javascript:void(0)" class="btn btn-success btn-fab"><i class="fa fa-pencil"></i></a>
-          <a href="javascript:void(0)" class="btn btn-info btn-fab"><i class="fa fa-check"></i></a>
-          <a href="javascript:void(0)" class="btn btn-warning btn-fab"><i class="fa fa-search"></i></a>
-          <a href="javascript:void(0)" class="btn btn-danger btn-fab"><i class="fa fa-th-large"></i></a>
-        </div>
-        <div class="col-lg-6 col-md-6">
-          <h3>Small</h3>
-          <a href="javascript:void(0)" class="btn btn-default btn-fab btn-fab-sm"><i class="fa fa-ellipsis-v"></i></a>
-          <a href="javascript:void(0)" class="btn btn-primary btn-fab btn-fab-sm"><i class="fa fa-plus"></i></a>
-          <a href="javascript:void(0)" class="btn btn-success btn-fab btn-fab-sm"><i class="fa fa-pencil"></i></a>
-          <a href="javascript:void(0)" class="btn btn-info btn-fab btn-fab-sm"><i class="fa fa-check"></i></a>
-          <a href="javascript:void(0)" class="btn btn-warning btn-fab btn-fab-sm"><i class="fa fa-search"></i></a>
-          <a href="javascript:void(0)" class="btn btn-danger btn-fab btn-fab-sm"><i class="fa fa-th-large"></i></a>
-        </div>
-      </div>
-    </div>
-    <!--Button Sizes-->
-    <div class="col-xs-12 col-sm-6">
-      <div class="card">
-        <header class="card-heading ">
-          <h2 class="card-title">Button Sizes</h2>
-          <p>Raised buttons are used to add dimension and emphasizes important functions.</p>
-        </header>
-        <div class="card-body">
-          <a href="javascript:void(0)" class="btn btn-primary btn-lg">LARGE BUTTON</a>
-          <a href="javascript:void(0)" class="btn btn-primary">DEFAULT BUTTON</a>
-          <a href="javascript:void(0)" class="btn btn-primary btn-sm">SMALL BUTTON</a>
-          <a href="javascript:void(0)" class="btn btn-primary btn-xs">TINY BUTTON</a>
-        </div>
-      </div>
-    </div>
-    <!--Button Styles-->
-    <div class="col-xs-12 col-sm-6">
-      <div class="card">
-        <header class="card-heading ">
-          <h2 class="card-title">Button Styles</h2>
-          <p>Raised buttons are used to add dimension and emphasizes important functions.</p>
-        </header>
-        <div class="card-body">
-          <a href="javascript:void(0)" class="btn btn-primary btn-lg">DEFAULT</a>
-          <a href="javascript:void(0)" class="btn btn-primary btn-fab"><i class="fa fa-plus"></i></a>
-          <a href="javascript:void(0)" class="btn btn-primary btn-lg"><i class="fa fa-heart"></i>WISH ICON</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-xs-12">
-      <!--Button Groups-->
-      <div class="card">
-        <header class="card-heading ">
-          <h2 class="card-title">Button Groups</h2>
-          <p>Raised buttons are used to add dimension and emphasizes important functions.</p>
-        </header>
-        <div class="card-body">
-          <h3>Basic Example</h3>
-          <div class="btn-group">
-            <a href="javascript:void(0)" class="btn btn-default">DEFAULT</a>
-            <a href="javascript:void(0)" class="btn btn-primary">PRIMARY</a>
-            <a href="javascript:void(0)" class="btn btn-success">SUCCESS</a>
-            <a href="javascript:void(0)" class="btn btn-info">INFO</a>
-            <a href="javascript:void(0)" class="btn btn-warning">WARNING</a>
-            <a href="javascript:void(0)" class="btn btn-danger">DANGER</a>
-          </div>
-          <h3>Button Group Sizing</h3>
-          <div class="btn-group btn-group-lg">
-            <a href="javascript:void(0)" class="btn btn-default">LEFT</a>
-            <a href="javascript:void(0)" class="btn btn-default">MIDDLE</a>
-            <a href="javascript:void(0)" class="btn btn-default">RIGHT</a>
-          </div>
-          <div class="btn-group btn-group">
-            <a href="javascript:void(0)" class="btn btn-primary">LEFT</a>
-            <a href="javascript:void(0)" class="btn btn-primary">MIDDLE</a>
-            <a href="javascript:void(0)" class="btn btn-primary">RIGHT</a>
-          </div>
-          <div class="btn-group btn-group-sm">
-            <a href="javascript:void(0)" class="btn btn-success">LEFT</a>
-            <a href="javascript:void(0)" class="btn btn-success">MIDDLE</a>
-            <a href="javascript:void(0)" class="btn btn-success">RIGHT</a>
-          </div>
-          <div class="btn-group btn-group-xs">
-            <a href="javascript:void(0)" class="btn btn-warning">LEFT</a>
-            <a href="javascript:void(0)" class="btn btn-warning">MIDDLE</a>
-            <a href="javascript:void(0)" class="btn btn-warning">RIGHT</a>
-          </div>
-        </div>
-      </div>
-    </div>
+    <footer class="footer" *ngIf="list_page.length">
+      <button class="btn btn-danger" (click)="delete()">删除</button>
+      <nav aria-label="Page navigation">
+        <ul class="pagination">
+          <li>
+            <a aria-label="Previous" (click)="onPage(1)">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li *ngFor="let page of list_page" [ngClass]="{active: page.isActive}" (click)="onPage(page.page)"><a>{{page.page}}</a></li>
+          <li>
+            <a aria-label="Next" (click)="onPage(list_page.length)">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+  </div>
+</div>
 
+<!-- sendMsgModal -->
+<div class="modal fade" id="sendMsgModal" tabindex="-1" role="dialog" aria-labelledby="sendMsgModalLabel">
+  <div class="modal-dialog modal-dialog1" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+          aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="sendMsgModalLabel">发消息</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label for="name" class="col-sm-2 control-label">收件人:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="name" name="name" [(ngModel)]="name" disabled>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="title" class="col-sm-2 control-label">主题:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="title" name="title" placeholder="主题" [(ngModel)]="msgInfo.title">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="content" class="col-sm-2 control-label">内容:</label>
+            <div class="col-sm-10">
+              <textarea class="form-control" id="content" rows="10" name="content" [(ngModel)]="msgInfo.content"></textarea>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary" (click)="sendMsg()"> <i class="fa fa-send"></i> 发送</button>
+      </div>
+    </div>
   </div>
 </div>

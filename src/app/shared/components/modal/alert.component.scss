@@ -1,11 +1,12 @@
+.modal-backdrop.fade {
+  opacity: 0.5;
+}
 .fade {
   opacity: 1;
 }
 .modal{
-  background-color: rgba(59, 61, 62, 0.5);
   height: 100%;
   width: 100%;
-  position: relative;
   font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
   box-sizing: border-box;
   .modal-content{
