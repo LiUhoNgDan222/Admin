@@ -22,7 +22,6 @@ export class MailComponent implements OnInit {
   public page = {index: 1, count: 10};
   protected datetime; // 时间
   public username; // 用户名
-  public ip; // ip
   public state = '3'; // 状态
   public todayList: any[] = []; // 今天的列表
   public yesterdayList: any[] = []; // 昨天的列表

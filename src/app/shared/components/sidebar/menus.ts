@@ -72,7 +72,7 @@ export const menus = [
         id: 3,
         item: 'Mail',
         routerLink: '/pages/mail',
-        icon: 'fa-envelope-o',
+        icon: 'fa-envelope',
         isActive: false
       }
     ]

@@ -17,10 +17,6 @@
           <input type="text" class="form-control" placeholder="用户名" id="username" name="username" [(ngModel)]="username">
         </div>
         <div class="form-group">
-          <label for="ip"> IP：</label>
-          <input type="text" class="form-control" placeholder="IP" id="ip" name="ip" [(ngModel)]="ip">
-        </div>
-        <div class="form-group">
           <label>时间：</label>
           <app-date-range-picker name="date-range-picker" [(ngModel)]="date"></app-date-range-picker>
         </div>
@@ -33,8 +29,8 @@
           </select>
         </div>
         <div class="form-group">
-          <button class="btn btn-primary" (click)="search(0)"><i class="fa fa-search"></i> 查找</button>
-          <button class="btn btn-default" (click)="reset()">重置</button>
+          <button class="btn btn-primary"><i class="fa fa-search"></i> 查找</button>
+          <button class="btn btn-default">重置</button>
         </div>
       </form>
     </div>
@@ -125,6 +121,8 @@
               <ul class="panel-collapse collapse" id="{{item.mid}}">
                 <div class="panel-body">
                   <p>{{item.content}}</p>
+                  <p>Cray kale chips twee, la croix keffiyeh fanny pack vape gentrify cliche. Cray street art bespoke 3 wolf moon, af letterpress irony. Glossier artisan leggings cred offal edison bulb. Portland subway tile fap farm-to-table thundercats. Chia readymade seitan, hexagon retro jean shorts copper mug farm-to-table bicycle rights gentrify cold-pressed thundercats umami. Hammock next level mustache occupy helvetica retro everyday carry. Mlkshk DIY jianbing cardigan before they sold out.</p>
+                  <p>Cold-pressed wolf stumptown man bun, man braid synth bespoke whatever hoodie. Before they sold out wayfarers church-key affogato ethical gentrify food truck bitters craft beer roof party. Etsy roof party fanny pack pok pok whatever, tumeric health goth helvetica swag godard venmo kale chips edison bulb. Raclette vaporware viral flexitarian copper mug, offal snackwave tofu knausgaard ethical. Raclette cold-pressed iceland try-hard. Neutra dreamcatcher hammock, humblebrag post-ironic cred helvetica. Twee yuccie raclette hashtag enamel pin, mixtape 90's actually YOLO VHS subway tile brunch.</p>
                 </div>
                 <div class="panel-footer">
                   <span class="avatar"><img src="../../../../assets/images/header.jpg" alt="LiUhoNgDan"></span>
@@ -172,6 +170,8 @@
               <ul class="panel-collapse collapse" id="{{item.mid}}">
                 <div class="panel-body">
                   <p>{{item.content}}</p>
+                  <p>Artisan cronut forage, pour-over kickstarter flexitarian wolf portland neutra post-ironic letterpress intelligentsia mustache tattooed hella. Selfies truffaut tilde, venmo brunch pok pok meggings. Normcore raw denim forage vape, knausgaard kitsch chartreuse church-key hashtag. Shoreditch banjo trust fund, craft beer tumblr vaporware swag flannel. Craft beer chia umami, snackwave scenester knausgaard thundercats authentic hella cornhole tote bag selvage man braid af. Squid small batch gastropub, craft beer fap keffiyeh fanny pack vice venmo iceland leggings. Health goth tacos cred food truck aesthetic, hell of snackwave fap before they sold out schlitz neutra.</p>
+                  <p>Semiotics messenger bag enamel pin, offal 90's flexitarian XOXO fingerstache chillwave jianbing ennui. Tote bag chambray organic jean shorts everyday carry tattooed, cliche twee banh mi roof party hella. Wayfarers plaid hell of, godard shabby chic ugh street art disrupt food truck. Tumeric gastropub brooklyn small batch, beard neutra plaid XOXO woke hammock photo booth iceland pop-up roof party shabby chic. Selfies helvetica sriracha, four dollar toast bespoke food truck vaporware vexillologist post-ironic. Semiotics YOLO fanny pack, jean shorts humblebrag yr tofu hella. Blue bottle keytar artisan banh mi wayfarers.</p>
                 </div>
                 <div class="panel-footer">
                   <span class="avatar"><img src="../../../../assets/images/header.jpg" alt="LiUhoNgDan"></span>
