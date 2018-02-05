@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {GlobalConfig, ToastrService} from 'ngx-toastr';
 
 // 提示框类型
-const types = ['toast-success', 'error', 'info', 'warning'];
+const types = ['success', 'error', 'info', 'warning'];
 
 @Injectable()
 export class OpenToastrService {

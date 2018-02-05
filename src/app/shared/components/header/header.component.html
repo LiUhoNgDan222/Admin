@@ -12,7 +12,7 @@
           <ul class="dropdown-menu">
             <li>
               <ul class="fast-item">
-                <li><a [routerLink]="['/pipeline/generalBet']"><i class="fa fa-eercast"></i><span>普通投注</span></a></li>
+                <li><a [routerLink]="['/pages/mail']"><i class="fa fa-envelope"></i><span>Mail</span></a></li>
                 <li><a [routerLink]="['/userManage/userList']"><i class="fa fa-users"></i><span>用户列表</span></a></li>
                 <li><a data-toggle="modal" data-target="#addRechargeModal"><i class="fa fa-tablet"></i><span>账户充值</span></a></li>
               </ul>
@@ -21,7 +21,7 @@
               <ul class="fast-item">
                 <li><a [routerLink]="['/stationLetter/sendMessage']"><i class="fa fa-envelope"></i><span>发布消息</span></a></li>
                 <li><a href="###" (click)="cacheClear()"><i class="fa fa-location-arrow"></i><span>清空缓存</span></a></li>
-                <!--<li><a href="###"><i class="fa fa-plus"></i><span>添加</span></a></li>-->
+                <li><a href="###"><i class="fa fa-plus"></i><span>添加</span></a></li>
               </ul>
             </li>
           </ul>
@@ -31,13 +31,14 @@
         <ul class="nav navbar-nav">
           <li class="dropdown">
             <a href="###" class="dropdown-toggle user-info" data-toggle="dropdown">
-              <i class="fa fa-fw fa-user-circle-o"></i>
+              <img src="../../../../assets/images/6.jpg" alt="header">
               <span class="name">{{ username || '登录' }}</span>
               <i class="fa fa-caret-down"></i>
             </a>
             <ul class="dropdown-menu dropdown-menu-right">
               <li>
-                <a [routerLink]="['/account/logout']"><i class="fa fa-sign-out fa-fw"></i> 注销</a>
+                <a [routerLink]="['/pages/profile']"><i class="fa fa-user fa-fw"></i> Profile</a>
+                <a [routerLink]="['/account/logout']"><i class="fa fa-sign-out fa-fw"></i> Sign Out</a>
               </li>
             </ul>
           </li>

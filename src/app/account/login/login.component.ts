@@ -11,9 +11,9 @@ import { OpenToastrService } from '../../shared/service/open-toastr.service';
 })
 export class LoginComponent implements OnInit {
 
-  protected username: string = '';
-  protected password: string = '';
-  protected validate: string = '';
+  protected username: string = 'LiUhoNgDan';
+  protected password: string = '123456';
+  protected validate: string = 'LiUhoNgDan';
   protected user: any;
   constructor(protected router: Router,
               protected authService: AuthService,
@@ -25,13 +25,12 @@ export class LoginComponent implements OnInit {
   }
 
   protected doLogin(): void {
-    // console.log(this.username);
-    // console.log(this.password);
 
     // 将用户信息保存
     this.authService.Authenticate(this.username, 1342423, 'sdfsdgvsdgv', '64782365225r2fger');
     // 跳转到首页
     this.router.navigate(['/']);
+    this.openToastrService.openToast('success', '成功', '登录成功');
 
   }
 

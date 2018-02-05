@@ -28,22 +28,5 @@ export class HeaderComponent implements OnInit {
     dom.classList.toggle('push-right');
   }
 
-  data() {
-    console.log("发送请求");
-    this.http.post('http://192.168.1.130:911/shop/login','')
-      .map(res => res.json())
-      .subscribe(data => {
-        console.log(data);
-      });
-  }
-  recharge(){
-    alert("账户充值！");
-  }
-  cacheClear(){
-    if(confirm("您确定要清除缓存吗？")){
-      console.log("清除缓存");
-    }else{
-      console.log("取消操作");
-    }
-  }
+
 }
