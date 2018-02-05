@@ -8,7 +8,8 @@ const routes: Routes = [
     path: '', component: ComponentsComponent,
     children: [
       {path: 'table', loadChildren: './table/table.module#TableModule'},
-      {path: 'button', loadChildren: './button/button.module#ButtonModule'}
+      {path: 'button', loadChildren: './button/button.module#ButtonModule'},
+      {path: 'datepicker', loadChildren: './datepicker/datepicker.module#DatepickerModule'}
     ]
   }
 ];

@@ -1,7 +1,7 @@
-<div class="input-group datepicker" daterangepicker [options]="{startDate:dateInput.start, endDate:dateInput.end }"
+<div class="input-group datepicker" daterangepicker [options]="{startDate:dateAndTimeInput.start, endDate:dateAndTimeInput.end }"
      (selected)="selectedDate($event)">
   <span class="form-control uneditable-input" name="daterange">
-      {{ dateInput.start | date:'yyyy-MM-dd' }}<i *ngIf="dateInput.start">~</i>{{ dateInput.end| date:'yyyy-MM-dd' }}
+      {{ dateAndTimeInput.start | date:'yyyy-MM-dd HH:mm:ss' }}<i *ngIf="dateAndTimeInput.start">~</i>{{ dateAndTimeInput.end| date:'yyyy-MM-dd  HH:mm:ss' }}
   </span>
   <span class="input-group-btn">
   <a type="button" class="btn btn-default"><i class="fa fa-calendar"></i></a>

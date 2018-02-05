@@ -6,6 +6,7 @@ import {SidebarComponent} from './components/sidebar/sidebar.component';
 import {DateRangePickerComponent} from './components/date-range-picker/date-range-picker.component';
 import {DatePickerComponent} from './components/date-picker/date-picker.component';
 import {DateTimePickerComponent} from './components/date-time-picker/date-time-picker.component';
+import {DateAndTimePickerComponent} from './components/date-and-time-picker/date-and-time-picker.component';
 
 import {SharedUiModule} from './shared-ui.module';
 
@@ -26,7 +27,8 @@ import { AlertComponent} from './components/modal/alert.component';
     ConfirmComponent,
     AlertComponent,
     DatePickerComponent,
-    DateTimePickerComponent
+    DateTimePickerComponent,
+    DateAndTimePickerComponent
   ],
   exports: [
     CommonModule,
@@ -34,7 +36,8 @@ import { AlertComponent} from './components/modal/alert.component';
     SidebarComponent,
     DateRangePickerComponent,
     DatePickerComponent,
-    DateTimePickerComponent
+    DateTimePickerComponent,
+    DateAndTimePickerComponent
   ],
   entryComponents: [ConfirmComponent, AlertComponent]
 })

@@ -1,0 +1,49 @@
+<div class="wrap">
+  <div class="page-header">
+    <h1>Datepicker</h1>
+    <div class="path-breadcrumb">
+      <ol class="breadcrumb">
+        <li><a href="https://github.com/evansmwendwa/ng2-daterangepicker">
+          <span class="fa fa-table"></span> 第三方组件ng2-daterangepicker</a></li>
+      </ol>
+    </div>
+  </div>
+  <div class="container-fluid clearfix">
+    <!--Date Range Picker-->
+    <div class="col-xs-12 col-sm-6">
+      <div class="card">
+        <header class="card-heading ">
+          <h2 class="card-title">Date Range Picker</h2>
+          <p>The Date Range Picker is attached to a text input. It will use the current value of the input to initialize, and update the input if new dates are chosen.</p>
+        </header>
+        <div class="card-body">
+          <h3>Demo:</h3>
+          <form class="form-inline clearfix">
+            <div class="form-group">
+              <label>时间：</label>
+              <app-date-range-picker name="date-range-picker" [(ngModel)]="date"></app-date-range-picker>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--Date Range Picker-->
+    <div class="col-xs-12 col-sm-6">
+      <div class="card">
+        <header class="card-heading ">
+          <h2 class="card-title">Date Range Picker</h2>
+          <p>The Date Range Picker is attached to a text input. It will use the current value of the input to initialize, and update the input if new dates are chosen.</p>
+        </header>
+        <div class="card-body">
+          <h3>Demo:</h3>
+          <form class="form-inline clearfix">
+            <div class="form-group">
+              <label>时间：</label>
+              <app-date-and-time-picker name="date-and-time-picker" [(ngModel)]="date1"></app-date-and-time-picker>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

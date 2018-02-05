@@ -1,0 +1,24 @@
+.datepicker{
+  z-index: 0;
+  .btn {
+    padding: 6px 18px;
+  }
+  &> .form-control {
+    min-width: 300px !important;
+  }
+}
+.btn-group{
+  margin: 0 6px;
+  .btn-link{
+    padding: 0;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+}
+
+@media screen and (max-width:912px ) {
+  .btn-date-range {
+    margin-top: 10px;
+  }
+}

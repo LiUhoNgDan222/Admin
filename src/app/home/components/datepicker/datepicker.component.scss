@@ -1,0 +1,23 @@
+@import "../../../../assets/scss/base";
+@import "../../../../assets/scss/card";
+.wrap {
+  .page-header {
+    height: 200px;
+  }
+  .container-fluid {
+    margin-top: -90px;
+    padding-right: 30px;
+    padding-left: 30px;
+    margin-bottom: 50px;
+    .col-lg-6,.col-md-6,.col-xs-12,col-sm-6 {
+      padding-left: 0px;
+    }
+    .right {
+      float: right;
+    }
+  }
+}
+h3 {
+  font-size: 1.29em;
+  margin-bottom: 18px;
+}

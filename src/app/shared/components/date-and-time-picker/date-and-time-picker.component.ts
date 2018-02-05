@@ -1,4 +1,4 @@
-import {Component, OnInit, EventEmitter, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {DaterangepickerConfig} from 'ng2-daterangepicker';
 import {forwardRef} from '@angular/core';
 import {NG_VALUE_ACCESSOR} from '@angular/forms';
@@ -13,18 +13,18 @@ const ranges = [
 ];
 
 @Component({
-  selector: 'app-date-range-picker',
-  templateUrl: './date-range-picker.component.html',
-  styleUrls: ['date-range-picker.component.scss'],
+  selector: 'app-date-and-time-picker',
+  templateUrl: './date-and-time-picker.component.html',
+  styleUrls: ['date-and-time-picker.component.scss'],
   providers: [{
     provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => DateRangePickerComponent),
+    useExisting: forwardRef(() => DateAndTimePickerComponent),
     multi: true
   }]
 })
-export class DateRangePickerComponent implements OnInit {
+export class DateAndTimePickerComponent implements OnInit {
   // 默认时间
-  public dateInput: any = {
+  public dateAndTimeInput: any = {
     start: moment().startOf('days'),
     end: moment()
   };
@@ -35,7 +35,7 @@ export class DateRangePickerComponent implements OnInit {
   // 日期格式配置
   public options: any = {
     locale: {
-      format: 'YYYY-MM-DD',
+      format: 'YYYY-MM-DD HH:mm:ss',
       applyLabel: '确定',
       cancelLabel: '取消',
       fromLabel: '起始时间',
@@ -47,7 +47,10 @@ export class DateRangePickerComponent implements OnInit {
       minDays: 0,
       maxDays: 0
     },
-    alwaysShowCalendars: false
+    alwaysShowCalendars: false,
+    timePicker: true,
+    timePicker24Hour: true,
+    timePickerSeconds: true
   };
 
   constructor(private daterangepickerOptions: DaterangepickerConfig) {
@@ -64,10 +67,10 @@ export class DateRangePickerComponent implements OnInit {
   writeValue(value: any) {
     if (value) {
       this.daterange = value;
-      this.dateInput = value;
+      this.dateAndTimeInput = value;
     } else {
-      this.dateInput.start = '';
-      this.dateInput.end = '';
+      this.dateAndTimeInput.start = '';
+      this.dateAndTimeInput.end = '';
       this.daterange.start = '';
       this.daterange.end = '';
     }
@@ -86,8 +89,8 @@ export class DateRangePickerComponent implements OnInit {
     this.daterange.start = value.start;
     this.daterange.end = value.end;
 
-    this.dateInput.start = value.start;
-    this.dateInput.end = value.end;
+    this.dateAndTimeInput.start = value.start;
+    this.dateAndTimeInput.end = value.end;
 
     this.onModelChange(this.daterange);
   }
@@ -96,8 +99,8 @@ export class DateRangePickerComponent implements OnInit {
     this.daterange.start = ranges[index][0];
     this.daterange.end = ranges[index][1];
 
-    this.dateInput.start = ranges[index][0];
-    this.dateInput.end = ranges[index][1];
+    this.dateAndTimeInput.start = ranges[index][0];
+    this.dateAndTimeInput.end = ranges[index][1];
 
     this.onModelChange(this.daterange);
   }

@@ -27,7 +27,8 @@ export class DateTimePickerComponent implements OnInit {
 
   // 日期格式配置
   public options: any = {
-    locale: {format: 'YYYY-MM-DD HH:mm:ss',
+    locale: {
+      format: 'YYYY-MM-DD HH:mm:ss',
       applyLabel: '确定',
       cancelLabel: '取消',
       fromLabel: '起始时间',

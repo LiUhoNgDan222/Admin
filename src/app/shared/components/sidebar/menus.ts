@@ -38,8 +38,8 @@ export const menus = [
       },
       {
         id: 3,
-        item: '日期选择',
-        routerLink: '/pipeline/presentRecord',
+        item: 'Datepicker',
+        routerLink: '/components/datepicker',
         icon: 'fa-calendar',
         isActive: false
       },
