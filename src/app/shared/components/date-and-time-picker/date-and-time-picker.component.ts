@@ -3,6 +3,7 @@ import {DaterangepickerConfig} from 'ng2-daterangepicker';
 import {forwardRef} from '@angular/core';
 import {NG_VALUE_ACCESSOR} from '@angular/forms';
 
+declare var $: any;
 declare var moment: any;
 
 // 今天、昨天、明天  时间设置
@@ -30,7 +31,10 @@ export class DateAndTimePickerComponent implements OnInit {
   };
 
   // 时间范围
-  public daterange: any = {};
+  public daterange1: any = {};
+
+  public onModelChange: Function = () => {};
+  public onModelTouched: Function = () => {};
 
   // 日期格式配置
   public options: any = {
@@ -53,26 +57,18 @@ export class DateAndTimePickerComponent implements OnInit {
     timePickerSeconds: true
   };
 
-  constructor(private daterangepickerOptions: DaterangepickerConfig) {
-    // 日期控件设置
-    this.daterangepickerOptions.skipCSS = true;
-    this.daterangepickerOptions.settings = this.options;
+  constructor() {
   }
-
-  public onModelChange: Function = () => {
-  };
-  public onModelTouched: Function = () => {
-  };
 
   writeValue(value: any) {
     if (value) {
-      this.daterange = value;
+      this.daterange1 = value;
       this.dateAndTimeInput = value;
     } else {
       this.dateAndTimeInput.start = '';
       this.dateAndTimeInput.end = '';
-      this.daterange.start = '';
-      this.daterange.end = '';
+      this.daterange1.start = '';
+      this.daterange1.end = '';
     }
   }
 
@@ -86,23 +82,23 @@ export class DateAndTimePickerComponent implements OnInit {
 
 // 选择时间范围
   public selectedDate(value: any) {
-    this.daterange.start = value.start;
-    this.daterange.end = value.end;
+    this.daterange1.start = value.start;
+    this.daterange1.end = value.end;
 
     this.dateAndTimeInput.start = value.start;
     this.dateAndTimeInput.end = value.end;
 
-    this.onModelChange(this.daterange);
+    this.onModelChange(this.daterange1);
   }
 
   public range(index: number) {
-    this.daterange.start = ranges[index][0];
-    this.daterange.end = ranges[index][1];
+    this.daterange1.start = ranges[index][0];
+    this.daterange1.end = ranges[index][1];
 
     this.dateAndTimeInput.start = ranges[index][0];
     this.dateAndTimeInput.end = ranges[index][1];
 
-    this.onModelChange(this.daterange);
+    this.onModelChange(this.daterange1);
   }
 
   ngOnInit() {

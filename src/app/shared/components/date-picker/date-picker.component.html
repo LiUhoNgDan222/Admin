@@ -1,7 +1,7 @@
-<div class="input-group datepicker" daterangepicker [options]="{startDate:dateInput.start, endDate:dateInput.end}"
-     (selected)="selectedDate($event)">
+<div class="input-group datepicker" daterangepicker [options]="singlePicker"
+     (selected)="singleSelect($event)">
   <span class="form-control uneditable-input" name="daterange">
-    {{ dateInput.start | date: 'yyyy-MM-dd' }}
+    {{ singleDate | date: 'yyyy-MM-dd' }}
   </span>
   <span class="input-group-btn">
   <a type="button" class="btn btn-default"><i class="fa fa-calendar"></i></a>

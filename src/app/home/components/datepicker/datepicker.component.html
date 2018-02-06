@@ -27,12 +27,12 @@
         </div>
       </div>
     </div>
-    <!--Date Range Picker-->
+    <!--Date and Time-->
     <div class="col-xs-12 col-sm-6">
       <div class="card">
         <header class="card-heading ">
-          <h2 class="card-title">Date Range Picker</h2>
-          <p>The Date Range Picker is attached to a text input. It will use the current value of the input to initialize, and update the input if new dates are chosen.</p>
+          <h2 class="card-title">Date and Time</h2>
+          <p>The Date Range Picker can also be used to select times. Hour, minute and (optional) second dropdowns are added below the calendars.</p>
         </header>
         <div class="card-body">
           <h3>Demo:</h3>
@@ -45,5 +45,42 @@
         </div>
       </div>
     </div>
+    <!--Single Date Picker-->
+    <div class="col-xs-12 col-sm-6">
+      <div class="card">
+        <header class="card-heading ">
+          <h2 class="card-title">Single Date Picker</h2>
+          <p>The Date Range Picker can be turned into a single date picker widget with only one calendar. In this example, dropdowns to select a month and year have also been enabled at the top of the calendar to quickly jump to different months.</p>
+        </header>
+        <div class="card-body">
+          <h3>Demo:</h3>
+          <form class="form-inline clearfix">
+            <div class="form-group">
+              <label>时间：</label>
+              <app-date-picker name="date-picker" [(ngModel)]="date2"></app-date-picker>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--Single Date and Time Picker-->
+    <div class="col-xs-12 col-sm-6">
+      <div class="card">
+        <header class="card-heading ">
+          <h2 class="card-title">Single Date and Time Picker</h2>
+          <p>The Date Range Picker can be turned into a single date picker widget with only one calendar. In this example, dropdowns to select a month and year have also been enabled at the top of the calendar to quickly jump to different months.</p>
+        </header>
+        <div class="card-body">
+          <h3>Demo:</h3>
+          <form class="form-inline clearfix">
+            <div class="form-group">
+              <label>时间：</label>
+              <app-date-time-picker name="date-time-picker" [(ngModel)]="date3"></app-date-time-picker>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>

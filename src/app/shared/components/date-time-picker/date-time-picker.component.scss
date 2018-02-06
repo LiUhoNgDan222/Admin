@@ -3,6 +3,10 @@
   .btn {
     padding: 6px 18px;
   }
+  &> .form-control {
+    min-width: 140px !important;
+    font-weight: 500;
+  }
 }
 
 @media screen and (max-width:912px ) {
