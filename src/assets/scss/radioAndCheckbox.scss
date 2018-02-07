@@ -31,7 +31,8 @@
 
 
   一行多个radio的模板
-      <div class="radio">
+  radio颜色选择：加到radio里：radio-primary,radio-success,radio-info,radio-warning,radio-danger
+      <div class="radio radio-info">
         <label class="radio-inline">
           <input type="radio" name="accountType"  value="0" checked>
           <span class="circle"></span><span class="check"></span> 代理
@@ -86,10 +87,8 @@ label.radio-inline {
     &:checked {
       &~.circle {
         opacity: 1;
-        border-color: $bg-info;
       }
       &~.check {
-        background-color: $bg-info;
         transform: scale3d(.55,.55,1);
         opacity: 1;
       }
@@ -112,10 +111,88 @@ label.radio-inline {
     height: 15px;
     width: 15px;
     border-radius: 100%;
-    background-color: $bg-info;
     transform: scale3d(0,0,0);
   }
 }
+.radio-primary {
+  input[type=radio] {
+    &:checked {
+      & ~ .circle {
+        border-color: $bg-primary !important;
+      }
+      & ~ .check {
+        background-color: $bg-primary !important;
+      }
+    }
+  }
+  .check {
+    background-color: $bg-primary !important;
+  }
+}
+.radio-danger {
+  input[type=radio] {
+    &:checked {
+      & ~ .circle {
+        border-color: $bg-danger !important;
+      }
+      & ~ .check {
+        background-color: $bg-danger !important;
+      }
+    }
+  }
+  .check {
+    background-color: $bg-danger !important;
+  }
+}
+
+.radio-info {
+  input[type=radio] {
+    &:checked {
+      & ~ .circle {
+        border-color: $bg-info !important;
+      }
+      & ~ .check {
+        background-color: $bg-info !important;
+      }
+    }
+  }
+  .check {
+    background-color: $bg-info !important;
+  }
+}
+
+.radio-warning {
+  input[type=radio] {
+    &:checked {
+      & ~ .circle {
+        border-color: $bg-warning !important;
+      }
+      & ~ .check {
+        background-color: $bg-warning !important;
+      }
+    }
+  }
+  .check {
+    background-color: $bg-warning !important;
+  }
+}
+
+.radio-success {
+  input[type=radio] {
+    &:checked {
+      & ~ .circle {
+        border-color: $bg-success !important;
+      }
+      & ~ .check {
+        background-color: $bg-success !important;
+      }
+    }
+  }
+  .check {
+    background-color: $bg-success !important;
+  }
+}
+
 
 // 一行一个radio
 .radio {

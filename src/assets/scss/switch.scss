@@ -4,7 +4,7 @@
         <input type="checkbox" id="site1" name="switch" class="switch toggle-success">
         <label class="toggle" for="site1"></label>
 
- 开关的颜色：toggle-success、toggle-primary(默认)、toggle-info, toggle-default, toggle-warning
+ 开关的颜色：toggle-success、toggle-primary(默认)、toggle-info, toggle-default, toggle-warning, toggle-danger
 **/
 
 input[type=checkbox].switch {
@@ -59,6 +59,10 @@ input[type=checkbox].switch {
   }
   &.toggle-warning:checked + .toggle {
     background-color: $bg-warning;
+
+  }
+  &.toggle-danger:checked + .toggle {
+    background-color: $bg-danger;
 
   }
   &.toggle-default:checked + .toggle {

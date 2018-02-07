@@ -1,0 +1,145 @@
+<div class="wrap">
+  <div class="page-header">
+    <h1>Switch & Radio & Checkbox</h1>
+    <div class="path-breadcrumb">
+      <ol class="breadcrumb">
+        <li><a [routerLink]="['/']"><span class="fa fa-home"></span> Dashboard</a></li>
+        <li>components</li>
+        <li>switch & radio & checkbox</li>
+      </ol>
+    </div>
+  </div>
+  <div class="container-fluid clearfix">
+    <!--Switch-->
+    <div class="card">
+      <header class="card-heading ">
+        <h2 class="card-title">Switch</h2>
+        <p>Switch are used to choose true or false.</p>
+      </header>
+      <div class="card-body">
+        <input type="checkbox" id="site1" name="switch" class="switch toggle-default" checked>
+        <label class="toggle" for="site1"></label>
+        <input type="checkbox" id="site2" name="switch" class="switch toggle-success" checked>
+        <label class="toggle" for="site2"></label>
+        <input type="checkbox" id="site3" name="switch" class="switch toggle-primary" checked>
+        <label class="toggle" for="site3"></label>
+        <input type="checkbox" id="site4" name="switch" class="switch toggle-info" checked>
+        <label class="toggle" for="site4"></label>
+        <input type="checkbox" id="site5" name="switch" class="switch toggle-warning" checked>
+        <label class="toggle" for="site5"></label>
+        <input type="checkbox" id="site6" name="switch" class="switch toggle-danger" checked>
+        <label class="toggle" for="site6"></label>
+      </div>
+    </div>
+    <!--Radio-->
+    <div class="card">
+      <header class="card-heading ">
+        <h2 class="card-title">Radio</h2>
+      </header>
+      <div class="card-body clearfix">
+        <div class="col-lg-6 col-md-6">
+          <h3>Stacked</h3>
+          <p>Radios are for selecting one option from many.<br>
+            Disabled radios are supported, but to provide a "not-allowed" cursor on hover of the parent <span class="mark"> &lt;label&gt; </span>, you'll need to add the <span class="mark">.disabled</span> class to the parent <span class="mark">.radio</span>,<span class="mark"> .radio-inline</span>.</p>
+          <div class="radio">
+            <label>
+              <input type="radio" name="optionsRadios" value="option1" checked>
+              <span class="circle"></span><span class="check"></span>
+              Option one is this and that—be sure to include why it's great
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="optionsRadios" value="option2">
+              <span class="circle"></span><span class="check"></span>
+              Option two can be something else and selecting it will deselect option one
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="optionsRadios" value="option2">
+              <span class="circle"></span><span class="check"></span>
+              Option three.
+            </label>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6">
+          <h3>Inline</h3>
+          <p>Use the <span class="mark"> .radio-inline </span> classes on a series of radios for controls that appear on the same line.</p>
+          <div class="radio radio-success">
+            <label class="radio-inline">
+              <input type="radio" name="inlineRadioOption"  value="0" checked>
+              <span class="circle"></span><span class="check"></span> one
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="inlineRadioOption"  value="1">
+              <span class="circle"></span><span class="check"></span> two
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="inlineRadioOption"  value="2">
+              <span class="circle"></span><span class="check"></span> three
+            </label>
+          </div>
+          <div class="radio radio-primary">
+            <label class="radio-inline">
+              <input type="radio" name="inlineRadioOption1"  value="0" checked>
+              <span class="circle"></span><span class="check"></span> one
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="inlineRadioOption1"  value="1">
+              <span class="circle"></span><span class="check"></span> two
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="inlineRadioOption1"  value="2">
+              <span class="circle"></span><span class="check"></span> three
+            </label>
+          </div>
+          <div class="radio radio-info">
+            <label class="radio-inline">
+              <input type="radio" name="inlineRadioOption2"  value="0" checked>
+              <span class="circle"></span><span class="check"></span> one
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="inlineRadioOption2"  value="1">
+              <span class="circle"></span><span class="check"></span> two
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="inlineRadioOption2"  value="2">
+              <span class="circle"></span><span class="check"></span> three
+            </label>
+          </div>
+          <div class="radio radio-warning">
+            <label class="radio-inline">
+              <input type="radio" name="inlineRadioOption3"  value="0" checked>
+              <span class="circle"></span><span class="check"></span> one
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="inlineRadioOption3"  value="1">
+              <span class="circle"></span><span class="check"></span> two
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="inlineRadioOption3"  value="2">
+              <span class="circle"></span><span class="check"></span> three
+            </label>
+          </div>
+          <div class="radio radio-danger">
+            <label class="radio-inline">
+              <input type="radio" name="inlineRadioOption4"  value="0" checked>
+              <span class="circle"></span><span class="check"></span> one
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="inlineRadioOption4"  value="1">
+              <span class="circle"></span><span class="check"></span> two
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="inlineRadioOption4"  value="2">
+              <span class="circle"></span><span class="check"></span> three
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>

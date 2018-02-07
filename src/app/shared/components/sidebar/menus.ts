@@ -38,6 +38,13 @@ export const menus = [
       },
       {
         id: 3,
+        item: 'Checkbox&Radio',
+        routerLink: '/components/switch',
+        icon: 'fa-check-square',
+        isActive: false
+      },
+      {
+        id: 4,
         item: 'Datepicker',
         routerLink: '/components/datepicker',
         icon: 'fa-calendar',
@@ -56,16 +63,16 @@ export const menus = [
     list: [
       {
         id: 1,
-        item: 'Profile',
-        routerLink: '/pages/profile',
-        icon: 'fa-user',
+        item: '404',
+        routerLink: '/404',
+        icon: 'fa-exclamation-triangle',
         isActive: false
       },
       {
         id: 2,
-        item: '404',
-        routerLink: '/404',
-        icon: 'fa-exclamation-triangle',
+        item: 'Profile',
+        routerLink: '/pages/profile',
+        icon: 'fa-user',
         isActive: false
       },
       {

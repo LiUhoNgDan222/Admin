@@ -29,5 +29,9 @@
   }
   .card-body {
     padding: 15px 20px;
+    P {
+      padding: 7px 0;
+      color: $p-font;
+    }
   }
 }
