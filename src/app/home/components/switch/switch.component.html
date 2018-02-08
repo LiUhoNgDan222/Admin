@@ -35,31 +35,45 @@
     <div class="card">
       <header class="card-heading ">
         <h2 class="card-title">Radio</h2>
+        <p>Radios are for selecting one option from many.</p>
       </header>
       <div class="card-body clearfix">
         <div class="col-lg-6 col-md-6">
           <h3>Stacked</h3>
-          <p>Radios are for selecting one option from many.<br>
-            Disabled radios are supported, but to provide a "not-allowed" cursor on hover of the parent <span class="mark"> &lt;label&gt; </span>, you'll need to add the <span class="mark">.disabled</span> class to the parent <span class="mark">.radio</span>,<span class="mark"> .radio-inline</span>.</p>
-          <div class="radio">
+          <p>Disabled radios are supported, but to provide a "not-allowed" cursor on hover of the parent <span class="mark"> &lt;label&gt; </span>, you'll need to add the <span class="mark">.disabled</span> class to the parent <span class="mark">.radio</span>,<span class="mark"> .radio-inline</span>.</p>
+          <div class="radio radio-success">
             <label>
               <input type="radio" name="optionsRadios" value="option1" checked>
               <span class="circle"></span><span class="check"></span>
               Option one is this and that—be sure to include why it's great
             </label>
           </div>
-          <div class="radio">
+          <div class="radio radio-primary">
             <label>
               <input type="radio" name="optionsRadios" value="option2">
               <span class="circle"></span><span class="check"></span>
               Option two can be something else and selecting it will deselect option one
             </label>
           </div>
-          <div class="radio">
+          <div class="radio radio-info">
             <label>
-              <input type="radio" name="optionsRadios" value="option2">
+              <input type="radio" name="optionsRadios" value="option3">
               <span class="circle"></span><span class="check"></span>
-              Option three.
+              Option with info.
+            </label>
+          </div>
+          <div class="radio radio-warning">
+            <label>
+              <input type="radio" name="optionsRadios" value="option4">
+              <span class="circle"></span><span class="check"></span>
+              Option with warning.
+            </label>
+          </div>
+          <div class="radio radio-danger">
+            <label>
+              <input type="radio" name="optionsRadios" value="option5">
+              <span class="circle"></span><span class="check"></span>
+              Option with danger.
             </label>
           </div>
         </div>
@@ -139,7 +153,89 @@
         </div>
       </div>
     </div>
-
+    <div class="col-xs-12">
+      <!--Checkbox-->
+      <div class="card">
+        <header class="card-heading ">
+          <h2 class="card-title">Checkbox</h2>
+          <p>Checkboxes are for selecting one or several options in a list.</p>
+        </header>
+        <div class="card-body">
+          <h3>Stacked</h3>
+          <p>Disabled checkboxes are supported, but to provide a "not-allowed" cursor on hover of the parent <span class="mark"> &lt;label&gt; </span>, you'll need to add the <span class="mark">.disabled</span> class to the parent <span class="mark">.checkbox</span>,<span class="mark"> .checkbox-inline</span>.</p>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="" checked><span class="checkbox-material"><span class="check"></span></span>
+              Option one is this and that—be sure to include why it's great
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value=""><span class="checkbox-material"><span class="check"></span></span>
+              Option one is this and that—be sure to include why it's great
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value=""><span class="checkbox-material"><span class="check"></span></span>
+              Option one is this and that—be sure to include why it's great
+            </label>
+          </div>
+          <h3>Inline</h3>
+          <p>Use the <span class="mark"> .checkbox-inline </span> classes on a series of radios for controls that appear on the same line.</p>
+          <div class="checkbox checkbox-info">
+            <label class="checkbox-inline">
+              <input type="checkbox"  value="option1" checked>
+              <span class="checkbox-material"><span class="check"></span></span> 1
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox"  value="option1">
+              <span class="checkbox-material"><span class="check"></span></span> 2
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox"  value="option1">
+              <span class="checkbox-material"><span class="check"></span></span> 3
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox"  value="option1">
+              <span class="checkbox-material"><span class="check"></span></span> 4
+            </label>
+          </div>
+          <h3>Style</h3>
+          <p>You'll add class <span class="mark"> .checkbox-success </span>, <span class="mark"> .checkbox-primary </span>, <span class="mark"> .checkbox-info </span>, <span class="mark"> .checkbox-warning  </span>,<span class="mark"> .checkbox-danger </span> to parent <span class="mark"> .checkbox </span>.</p>
+          <div class="checkbox checkbox-success">
+            <label>
+              <input type="checkbox" value="" checked><span class="checkbox-material"><span class="check"></span></span>
+              Checkbox with success.
+            </label>
+          </div>
+          <div class="checkbox checkbox-primary">
+            <label>
+              <input type="checkbox" value="" checked><span class="checkbox-material"><span class="check"></span></span>
+              Checkbox with primary.
+            </label>
+          </div>
+          <div class="checkbox checkbox-info">
+            <label>
+              <input type="checkbox" value="" checked><span class="checkbox-material"><span class="check"></span></span>
+              Checkbox with info.
+            </label>
+          </div>
+          <div class="checkbox checkbox-warning">
+            <label>
+              <input type="checkbox" value="" checked><span class="checkbox-material"><span class="check"></span></span>
+              Checkbox with warning.
+            </label>
+          </div>
+          <div class="checkbox checkbox-danger">
+            <label>
+              <input type="checkbox" value="" checked><span class="checkbox-material"><span class="check"></span></span>
+              Checkbox with danger.
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </div>
 </div>

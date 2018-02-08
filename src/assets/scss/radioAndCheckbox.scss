@@ -1,7 +1,8 @@
 /*
 示例：
   一行一个checkbox的模板
-      <div class="checkbox">
+  checkbox颜色选择：加到checkbox里：checkbox-primary,checkbox-success,checkbox-info,checkbox-warning,checkbox-danger
+      <div class="checkbox checkbox-info">
         <label>
           <input type="checkbox" value=""><span class="checkbox-material"><span class="check"></span></span>
           Option one is this and that—be sure to include why it's great
@@ -9,7 +10,7 @@
       </div>
 
   一行多个checkbox的模板
-      <div class="checkbox">
+      <div class="checkbox checkbox-info">
         <label class="checkbox-inline">
           <input type="checkbox"  value="option1">
           <span class="checkbox-material"><span class="check"></span></span> 1
@@ -21,7 +22,8 @@
       </div>
 
   一行一个radio的模板
-      <div class="radio">
+  radio颜色选择：加到radio里：radio-primary,radio-success,radio-info,radio-warning,radio-danger
+      <div class="radio radio-info">
         <label>
           <input type="radio" name="optionsRadios" value="option1">
           <span class="circle"></span><span class="check"></span>
@@ -206,10 +208,8 @@ label.radio-inline {
     &:checked {
       &~.circle {
         opacity: 1;
-        border-color: $bg-info;
       }
       &~.check {
-        background-color: $bg-info;
         transform: scale3d(.55,.55,1);
         opacity: 1;
       }
@@ -232,7 +232,6 @@ label.radio-inline {
     height: 15px;
     width: 15px;
     border-radius: 100%;
-    background-color: $bg-info;
     transform: scale3d(0,0,0);
   }
 }
@@ -302,6 +301,7 @@ label.checkbox-inline {
   margin-bottom: 0;
   label {
     @include label;
+    padding-left: 0;
     input[type=checkbox] {
       opacity: 0;
       position: absolute;
@@ -348,6 +348,96 @@ label.checkbox-inline {
           margin-left: 6px;
           width: 0;
           height: 0;
+        }
+      }
+    }
+  }
+}
+
+.checkbox-success {
+  label {
+    input[type=checkbox] {
+      &:checked {
+        &+.checkbox-material{
+          .check {
+            color: $bg-success;
+            border-color: $bg-success;
+            &:before {
+              color: $bg-success;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.checkbox-primary {
+  label {
+    input[type=checkbox] {
+      &:checked {
+        &+.checkbox-material{
+          .check {
+            color: $bg-primary;
+            border-color: $bg-primary;
+            &:before {
+              color: $bg-primary;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.checkbox-info {
+  label {
+    input[type=checkbox] {
+      &:checked {
+        &+.checkbox-material{
+          .check {
+            color: $bg-info;
+            border-color: $bg-info;
+            &:before {
+              color: $bg-info;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.checkbox-warning {
+  label {
+    input[type=checkbox] {
+      &:checked {
+        &+.checkbox-material{
+          .check {
+            color: $bg-warning;
+            border-color: $bg-warning;
+            &:before {
+              color: $bg-warning;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.checkbox-danger {
+  label {
+    input[type=checkbox] {
+      &:checked {
+        &+.checkbox-material{
+          .check {
+            color: $bg-danger;
+            border-color: $bg-danger;
+            &:before {
+              color: $bg-danger;
+            }
+          }
         }
       }
     }
