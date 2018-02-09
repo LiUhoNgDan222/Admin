@@ -10,7 +10,8 @@ const routes: Routes = [
       {path: 'table', loadChildren: './table/table.module#TableModule'},
       {path: 'button', loadChildren: './button/button.module#ButtonModule'},
       {path: 'datepicker', loadChildren: './datepicker/datepicker.module#DatepickerModule'},
-      {path: 'switch', loadChildren: './switch/switch.module#SwitchModule'}
+      {path: 'switch', loadChildren: './switch/switch.module#SwitchModule'},
+      {path: 'toast', loadChildren: './toast/toast.module#ToastModule'}
     ]
   }
 ];

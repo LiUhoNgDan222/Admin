@@ -50,6 +50,13 @@ export const menus = [
         icon: 'fa-calendar',
         isActive: false
       },
+      {
+        id: 5,
+        item: 'Toast',
+        routerLink: '/components/toast',
+        icon: 'fa-columns',
+        isActive: false
+      }
     ]
   },
   {

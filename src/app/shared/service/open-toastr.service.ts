@@ -12,7 +12,6 @@ export class OpenToastrService {
 
   constructor(public toastrService: ToastrService) {
     this.options = this.toastrService.toastrConfig;
-    this.options.positionClass = 'toast-top-center'; //  提示框方向
     this.options.closeButton = true;
   }
 
@@ -20,8 +19,10 @@ export class OpenToastrService {
   /**
    * 打开提示框openToast()
    * 参数：type:提示框类型（'success', 'error', 'info', 'warning'），message:提示内容，title：主题
+   * position:('top-center, top-right, top-left, top-full-width, bottom-center, bottom-right, bottom-left, bottom-full-width')
    **/
-  public openToast(type, title, message) {
+  public openToast(position, type, title, message) {
+    this.options.positionClass = 'toast-' + position; //  提示框方向
     let toast_message = message;
     let toast_title = title;
     let toast_type = types.find(t => t === type);

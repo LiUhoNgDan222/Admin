@@ -1,0 +1,38 @@
+<div class="wrap">
+  <div class="page-header">
+    <h1>Toast</h1>
+    <div class="path-breadcrumb">
+      <ol class="breadcrumb">
+        <li><a href="https://github.com/scttcper/ngx-toastr"><span class="fa fa-columns"></span> 第三方组件ngx-toastr</a></li>
+      </ol>
+    </div>
+  </div>
+  <div class="container-fluid clearfix">
+    <!--Toast-->
+    <div class="card">
+      <header class="card-heading ">
+        <h2 class="card-title">Demo</h2>
+        <p>You can chose different type or position for toast.</p>
+      </header>
+      <div class="card-body">
+        <h3>Type</h3>
+        <p>eg: success, info, warning, error.</p>
+        <a href="javascript:void(0)" class="btn btn-success" (click)="openToast('top-center','success')">SUCCESS</a>
+        <a href="javascript:void(0)" class="btn btn-info" (click)="openToast('top-center','info')">INFO</a>
+        <a href="javascript:void(0)" class="btn btn-warning" (click)="openToast('top-center','warning')">WARNING</a>
+        <a href="javascript:void(0)" class="btn btn-danger" (click)="openToast('top-center','error')">ERROR</a>
+        <h3>Position</h3>
+        <p>eg: top-center, top-right, top-left, top-full-width, bottom-center, bottom-right, bottom-left, bottom-full-width.  </p>
+        <a href="javascript:void(0)" class="btn btn-success" (click)="openToast('top-center','success')">Top Center</a>
+        <a href="javascript:void(0)" class="btn btn-info" (click)="openToast('top-right','info')">Top Right</a>
+        <a href="javascript:void(0)" class="btn btn-warning" (click)="openToast('top-left','warning')">Top Left</a>
+        <a href="javascript:void(0)" class="btn btn-danger" (click)="openToast('top-full-width','error')">Top Full Width</a>
+        <a href="javascript:void(0)" class="btn btn-success" (click)="openToast('bottom-center','success')">Bottom Center</a>
+        <a href="javascript:void(0)" class="btn btn-info" (click)="openToast('bottom-right','info')">Bottom Right</a>
+        <a href="javascript:void(0)" class="btn btn-warning" (click)="openToast('bottom-left','warning')">Bottom Left</a>
+        <a href="javascript:void(0)" class="btn btn-danger" (click)="openToast('bottom-full-width','error')">Bottom Full Width</a>
+      </div>
+    </div>
+
+  </div>
+</div>
