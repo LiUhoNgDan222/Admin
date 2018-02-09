@@ -191,12 +191,12 @@ export class MailComponent implements OnInit {
       const confirmCfg = new ConfirmConfig('是否确定要删除？');
       this.modalService.confirm(confirmCfg).then((result) => {
         if (result.status === 'approved') {
-          this.openToastrService.openToast('success', '成功', '删除成功！');
+          this.openToastrService.openToast('top-center', 'success', '成功', '删除成功！');
         }
       }).catch(() => {
       });
     } else {
-      this.openToastrService.openToast('warning', '提示', '请选择需要删除的消息！');
+      this.openToastrService.openToast('top-center', 'warning', '提示', '请选择需要删除的消息！');
     }
   }
 

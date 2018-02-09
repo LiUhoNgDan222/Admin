@@ -56,6 +56,13 @@ export const menus = [
         routerLink: '/components/toast',
         icon: 'fa-columns',
         isActive: false
+      },
+      {
+        id: 6,
+        item: 'Modal',
+        routerLink: '/components/modal',
+        icon: 'fa-window-restore',
+        isActive: false
       }
     ]
   },

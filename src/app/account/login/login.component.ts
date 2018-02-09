@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
     this.authService.Authenticate(this.username, 1342423, 'sdfsdgvsdgv', '64782365225r2fger');
     // 跳转到首页
     this.router.navigate(['/']);
-    this.openToastrService.openToast('success', '成功', '登录成功');
+    this.openToastrService.openToast('top-center', 'success', '成功', '登录成功');
 
   }
 

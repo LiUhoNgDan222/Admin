@@ -11,7 +11,8 @@ const routes: Routes = [
       {path: 'button', loadChildren: './button/button.module#ButtonModule'},
       {path: 'datepicker', loadChildren: './datepicker/datepicker.module#DatepickerModule'},
       {path: 'switch', loadChildren: './switch/switch.module#SwitchModule'},
-      {path: 'toast', loadChildren: './toast/toast.module#ToastModule'}
+      {path: 'toast', loadChildren: './toast/toast.module#ToastModule'},
+      {path: 'modal', loadChildren: './modal/modal.module#ModalModule'}
     ]
   }
 ];

@@ -19,11 +19,11 @@ export class LogoutComponent implements OnInit {
 
     if (!this.authService.IsAuthenticated) {
       setTimeout(() => {
-        this.openToastrService.openToast('success', '注销成功', '您已成功注销用户');
+        this.openToastrService.openToast( 'top-center', 'success', '注销成功', '您已成功注销用户');
         this.router.navigate(['/account/login']);
       });
     } else {
-      this.openToastrService.openToast('error', '注销失败', '您未正常下线！');
+      this.openToastrService.openToast('top-center', 'error', '注销失败', '您未正常下线！');
     }
   }
 }

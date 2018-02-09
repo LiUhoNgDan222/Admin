@@ -19,7 +19,7 @@ export class AuthGuardService implements CanActivate, CanActivateChild {
     public canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
 
         if (!this.authService.IsAuthenticated) {
-            this.toastrService.openToast('warning', '未登录', '账户未登录, 请先登录!');
+            this.toastrService.openToast('top-center', 'warning', '未登录', '账户未登录, 请先登录!');
             this.router.navigate(['/account/login']);
         }
         return true;
