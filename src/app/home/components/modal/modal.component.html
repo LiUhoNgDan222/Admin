@@ -10,16 +10,136 @@
     </div>
   </div>
   <div class="container-fluid clearfix">
-    <!--Toast-->
     <div class="card">
       <header class="card-heading ">
-        <h2 class="card-title">Bootstrap Modal</h2>
-        <p></p>
+        <h2 class="card-title">Demos</h2>
       </header>
       <div class="card-body">
-
+        <p>Modals are streamlined, but flexible, dialog prompts with the minimum required functionality and smart defaults.
+          You can use a modal for dialog boxes, confirmation messages, or other content that can be called up.</p>
       </div>
     </div>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="card">
+        <header class="card-heading ">
+          <h2 class="card-title">Base Modal</h2>
+        </header>
+        <div class="card-body">
+          <button class="btn btn-info" data-toggle="modal" data-target="#baseModal">TRIGGER</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="card">
+        <header class="card-heading ">
+          <h2 class="card-title">Modal With Tabs</h2>
+        </header>
+        <div class="card-body">
+          <button class="btn btn-info" data-toggle="modal" data-target="#tabsModal">TRIGGER</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="card">
+        <header class="card-heading ">
+          <h2 class="card-title">Confirm</h2>
+        </header>
+        <div class="card-body">
+          <button class="btn btn-info" (click)="open()">TRIGGER</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+<!-- Base Model-->
+<div class="modal fade" id="baseModal" tabindex="-1" role="dialog" aria-labelledby="baseModalLabel">
+  <div class="modal-dialog modal-dialog1" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+          aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="baseModalLabel">Title goes here</h4>
+      </div>
+      <div class="modal-body">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consectetur debitis eaque exercitationem fuga
+          fugiat hic, in minima modi nihil quam, repellat sapiente unde, vitae voluptate! Blanditiis nulla repellendus
+          ullam? Nulla facilisi. Nulla facilisi. Mauris convallis venenatis massa, quis consectetur felis ornare quis.
+          Sed aliquet nunc ac ante molestie ultricies. Nam pulvinar ultricies bibendum.</p>
+      </div>
+      <div class="modal-footer">
+        <input type="reset" class="btn btn-default" data-dismiss="modal" value="CANCEL">
+        <input type="submit" class="btn btn-primary" value="OK">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal With Tabs-->
+<div class="modal fade" id="tabsModal" tabindex="-1" role="dialog" aria-labelledby="tabsModalLabel">
+  <div class="modal-dialog modal-dialog1" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+          aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="tabsModalLabel">Title goes here</h4>
+      </div>
+      <div class="modal-body">
+        <ul id="myTab" class="nav nav-tabs nav-justified">
+          <li class="active">
+            <a href="#tab1" data-toggle="tab">tab1</a>
+          </li>
+          <li><a href="#tab2" data-toggle="tab">tab2</a></li>
+          <li><a href="#tab3" data-toggle="tab">tab3</a></li>
+        </ul>
+        <div id="myTabContent" class="tab-content">
+          <!--tab1-->
+          <div class="tab-pane fade in active" id="tab1">
+            <div class="content">
+              <h3>Craft beer vice master cleanse kinfolk pickled.</h3>
+              <p>Air plant letterpress meh scenester readymade, raw denim jianbing bespoke meditation live-edge banjo
+                microdosing iceland. Vinyl portland tumeric photo booth farm-to-table chia try-hard. Sustainable pabst
+                roof party, tilde four loko cornhole activated charcoal artisan put a bird on it XOXO locavore. </p>
+              <p>Jean shorts hashtag fashion axe keytar sartorial, jianbing bushwick. Sriracha man braid church-key enamel
+                pin, tumeric etsy try-hard freegan fingerstache hella hoodie leggings. Lumbersexual bicycle rights vegan
+                poke swag hell of, tote bag irony tofu chia green juice. Austin gentrify microdosing forage keytar,
+                paleo lo-fi.</p>
+            </div>
+          </div>
+          <!--tab2-->
+          <div class="tab-pane fade" id="tab2">
+            <div class="content">
+              <h3>Vape plaid forage, iPhone truffaut vegan pok.</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad autem consectetur consequuntur, debitis
+                deleniti dolore ea error et in iste labore magni maiores, pariatur reiciendis repellendus tenetur veniam
+                veritatis voluptatibus!</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi, assumenda commodi dolorum
+                mollitia necessitatibus praesentium quo tempora totam voluptas? Ducimus eius natus odit sit soluta
+                temporibus ut vitae. Eos.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi, assumenda commodi dolorum
+                mollitia necessitatibus praesentium quo tempora totam voluptas?</p>
+            </div>
+          </div>
+          <!--tab3-->
+          <div class="tab-pane fade" id="tab3">
+            <div class="content">
+              <h3>Meditation chartreuse street art, hella cliche.</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad autem consectetur consequuntur, debitis
+                deleniti dolore ea error et in iste labore magni maiores, pariatur reiciendis repellendus tenetur veniam
+                veritatis voluptatibus!</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi, assumenda commodi dolorum
+                mollitia necessitatibus praesentium quo tempora totam voluptas? Ducimus eius natus odit sit soluta
+                temporibus ut vitae. Eos.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus animi, assumenda commodi dolorum
+                mollitia necessitatibus praesentium quo tempora totam voluptas?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <input type="reset" class="btn btn-default" data-dismiss="modal" value="CANCEL">
+        <input type="submit" class="btn btn-primary" value="OK">
+      </div>
+    </div>
   </div>
 </div>

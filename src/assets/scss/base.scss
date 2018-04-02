@@ -83,6 +83,8 @@ $radio-boder-color: rgba(165,181,203,.53);
 @media screen and (max-width: 768px) {
   .wrap {
     .page-header {
+      padding-right: 0;
+      padding-left: 0;
       h1, .path-breadcrumb {
         padding-left: 10px;
         display: block;

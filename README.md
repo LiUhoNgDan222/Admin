@@ -37,3 +37,6 @@
 用到了第三方的组件[ngx-toastr](https://github.com/scttcper/ngx-toastr)，大家可以去github上看一下, 官方也有[demo](https://scttcper.github.io/ngx-toastr/).
 
 ![](./src/assets/images/README/toast.png)
+
+## 6、modal
+![](./src/assets/images/README/modal.png)
